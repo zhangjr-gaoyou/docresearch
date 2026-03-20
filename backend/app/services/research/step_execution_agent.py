@@ -1,0 +1,144 @@
+"""Research step execution agent: executes a single step with prior result and optional doc content."""
+import os
+import threading
+from typing import Callable, Optional
+
+from app.services.research.exceptions import ResearchJobCancelled
+
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage
+
+from app.core.settings import settings
+from app.services.prompt_registry import get_prompt
+
+MAX_SINGLE_CHUNK = 8000
+MAX_TOTAL_CONTEXT = 12000
+
+
+def _raise_if_cancelled(cancel_event: Optional[threading.Event]) -> None:
+    if cancel_event is not None and cancel_event.is_set():
+        raise ResearchJobCancelled()
+
+
+def _get_llm(temperature: float = 0.3):
+    """Create LLM client for DashScope (Qwen)."""
+    api_key = settings.DASHSCOPE_API_KEY or os.getenv("DASHSCOPE_API_KEY", "")
+    return ChatOpenAI(
+        model=settings.LLM_MODEL,
+        api_key=api_key,
+        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+        temperature=temperature,
+    )
+
+
+def execute_step(
+    topic: str,
+    step_content: str,
+    step_index: int,
+    prior_step_markdown: str = "",
+    collection_doc_markdown: str = "",
+    doc_label: str = "",
+    on_log: Optional[Callable[[str], None]] = None,
+    cancel_event: Optional[threading.Event] = None,
+) -> str:
+    """
+    Execute a single research step.
+    Inputs: topic, step text, prior step result, optional collection doc content.
+    Returns Markdown string for this step.
+    """
+    llm = _get_llm()
+
+    prior_section = ""
+    if prior_step_markdown.strip():
+        prior_section = f"""
+## 上一步骤执行结果
+
+{prior_step_markdown}
+"""
+
+    doc_section = ""
+    if collection_doc_markdown.strip():
+        doc_content = collection_doc_markdown
+        if len(doc_content) > MAX_TOTAL_CONTEXT - len(prior_step_markdown) - 500:
+            doc_content = doc_content[: MAX_TOTAL_CONTEXT - len(prior_step_markdown) - 500] + "\n\n（内容已截断）"
+        doc_section = f"""
+## 引用的文档内容
+
+{doc_content}
+"""
+    else:
+        doc_section = "\n（本步骤未引用文档集文档全文）\n"
+
+    prompt = get_prompt(
+        "research.step_execution.main",
+        topic=topic,
+        step_content=step_content,
+        step_index=step_index + 1,
+        prior_section=prior_section,
+        doc_section=doc_section,
+    )
+
+    if len(collection_doc_markdown) > MAX_TOTAL_CONTEXT and collection_doc_markdown.strip():
+        return _execute_step_map_reduce(
+            llm=llm,
+            topic=topic,
+            step_content=step_content,
+            step_index=step_index,
+            prior_step_markdown=prior_step_markdown,
+            collection_doc_markdown=collection_doc_markdown,
+            doc_label=doc_label,
+            on_log=on_log,
+            cancel_event=cancel_event,
+        )
+
+    _raise_if_cancelled(cancel_event)
+    response = llm.invoke([HumanMessage(content=prompt)])
+    return response.content.strip()
+
+
+def _execute_step_map_reduce(
+    llm,
+    topic: str,
+    step_content: str,
+    step_index: int,
+    prior_step_markdown: str,
+    collection_doc_markdown: str,
+    doc_label: str,
+    on_log: Optional[Callable[[str], None]] = None,
+    cancel_event: Optional[threading.Event] = None,
+) -> str:
+    """Map-reduce for large document in single step."""
+    chunks = [
+        collection_doc_markdown[i : i + MAX_SINGLE_CHUNK]
+        for i in range(0, len(collection_doc_markdown), MAX_SINGLE_CHUNK)
+    ]
+    if on_log:
+        on_log(f"文档较大，拆分为 {len(chunks)} 个片段进行 Map-Reduce")
+
+    partial_results = []
+    for i, chunk in enumerate(chunks):
+        _raise_if_cancelled(cancel_event)
+        prior_section = f"\n## 上一步骤结果\n{prior_step_markdown}\n" if prior_step_markdown.strip() else ""
+        prompt = get_prompt(
+            "research.step_execution.map_chunk",
+            topic=topic,
+            step_content=step_content,
+            prior_section=prior_section,
+            chunk=chunk,
+            chunk_index=i + 1,
+            chunk_total=len(chunks),
+        )
+        response = llm.invoke([HumanMessage(content=prompt)])
+        partial_results.append(response.content)
+
+    _raise_if_cancelled(cancel_event)
+    partial_results_str = chr(10).join(partial_results)
+    merge_prompt = get_prompt(
+        "research.step_execution.map_merge",
+        topic=topic,
+        step_content=step_content,
+        partial_results=partial_results_str,
+    )
+    _raise_if_cancelled(cancel_event)
+    response = llm.invoke([HumanMessage(content=merge_prompt)])
+    return response.content.strip()

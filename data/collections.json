@@ -1,0 +1,15 @@
+{
+  "collections": {
+    "90e61aaa-da35-4bbc-abf1-c7ec726d6ee1": {
+      "id": "90e61aaa-da35-4bbc-abf1-c7ec726d6ee1",
+      "name": "demo1",
+      "documents": [
+        {
+          "id": "016e0359-5561-45d6-8c6d-6ca374de097f",
+          "filename": "中华人民共和国招标投标法(2017修正).pdf",
+          "file_type": "pdf"
+        }
+      ]
+    }
+  }
+}

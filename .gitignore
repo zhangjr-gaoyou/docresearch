@@ -1,0 +1,16 @@
+.run/
+backend/.venv/
+frontend/node_modules/
+frontend/dist/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.env.*
+!.env.example
+data/research_output/
+data/faiss_index/*
+!data/faiss_index/.gitkeep
+data/uploads/*
+!data/uploads/.gitkeep
+*.log
