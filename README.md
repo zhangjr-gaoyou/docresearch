@@ -144,3 +144,28 @@ research2/
 - 单测：文档解析、检索、重排、计划编排
 - 集成测试：模型接口 Mock + API 回归
 - 前端 E2E：关键流程自动化测试
+
+## 版本与发布
+
+- **V0.1**（标签 `v0.1`）：首个可运行版本——文档集、向量检索、研究计划与后台任务、提示词管理、任务中止等。
+
+### 推送到 GitHub（`docresearch`）
+
+1. 在 GitHub 上新建空仓库 **docresearch**（不要初始化 README，避免冲突）。
+2. 若你的账号不是 `zhangjr`，请改远程地址：
+
+   ```bash
+   git remote set-url origin https://github.com/<你的用户名>/docresearch.git
+   ```
+
+3. 推送分支与标签：
+
+   ```bash
+   git push -u origin main
+   git push origin v0.1
+   ```
+
+### 仓库忽略内容说明
+
+- `backend/.venv/`、`frontend/node_modules/`、`frontend/dist/`、`.env` 不纳入版本库。
+- `data/faiss_index/*`、`data/uploads/*`、`data/research_output/` 为本地运行生成，由 `.gitignore` 排除；首次使用请通过界面上传文档重建索引。
