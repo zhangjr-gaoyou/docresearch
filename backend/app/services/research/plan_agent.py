@@ -1,8 +1,7 @@
 """Research plan generation agent: generates steps from topic + document names."""
 import json
 import re
-import uuid
-from typing import Callable, Optional
+from typing import Callable, List, Optional
 
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
@@ -27,17 +26,16 @@ def _get_llm(temperature: float = 0.3):
     )
 
 
-def generate_research_plan(
+def generate_plan_steps(
     collection_id: str,
     topic: str,
     on_log: Optional[Callable[[str], None]] = None,
-) -> dict:
+) -> List[dict]:
     """
-    Generate research plan steps using LLM.
-    Input: collection_id, topic.
-    Injects document names from collection into prompt.
-    Returns plan dict (plan_id, topic, steps, markdown, collection_id).
+    Call LLM to produce step list only (no plan_id).
+    Each step: {index, content, status}.
     """
+    _ = on_log  # reserved for streaming / logging
     llm = _get_llm()
     doc_names = get_collection_document_names(collection_id)
     doc_list_str = ""
@@ -69,16 +67,7 @@ def generate_research_plan(
     except json.JSONDecodeError:
         steps_raw = [line.strip() for line in content.split("\n") if line.strip()][:8]
 
-    steps = [
+    return [
         {"index": i, "content": s if isinstance(s, str) else str(s), "status": "pending"}
         for i, s in enumerate(steps_raw)
     ]
-    plan_id = str(uuid.uuid4())
-    plan = {
-        "plan_id": plan_id,
-        "collection_id": collection_id,
-        "topic": topic,
-        "steps": steps,
-        "markdown": f"# 研究计划：{topic}\n\n" + "\n".join(f"{i+1}. {s['content']}" for i, s in enumerate(steps)),
-    }
-    return plan

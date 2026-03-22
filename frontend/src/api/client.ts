@@ -1,5 +1,30 @@
 const BASE = '/api/v1'
 
+/** 研究任务执行日志单条（与后端 ResearchLogEntry 对齐） */
+export type ResearchJobLogEntry = {
+  time: string
+  message: string
+  level?: string
+  document?: string
+  document_count?: number
+  doc_index?: number
+  doc_total?: number
+  char_count?: number
+  chunk_index?: number
+  chunk_total?: number
+  step_index?: number
+  step_total?: number
+  step_count?: number
+  need_collection_document?: boolean
+  output_path?: string
+  agent?: string
+  response_preview?: string
+  prompt_slot?: string
+  prompt_preview?: string
+  tool_name?: string
+  tool_detail?: string
+}
+
 async function request<T>(
   path: string,
   options: RequestInit & { signal?: AbortSignal } = {}
@@ -70,6 +95,7 @@ export const api = {
     listPlans: () =>
       request<{
         plan_id: string
+        title?: string | null
         topic: string
         collection_id: string
         collection_name: string
@@ -80,19 +106,39 @@ export const api = {
       request<{
         plan_id: string
         topic: string
+        title?: string | null
         collection_id?: string
         steps: { index: number; content: string; status?: string }[]
         markdown?: string
       }>(`/research/plans/${planId}`),
-    generatePlan: (collectionId: string, topic: string) =>
+    createResearchProject: (collectionId: string, topic: string, title: string) =>
       request<{
         plan_id: string
         topic: string
+        title?: string | null
+        collection_id?: string
+        steps: { index: number; content: string; status?: string }[]
+        markdown?: string
+      }>('/research/projects', {
+        method: 'POST',
+        body: JSON.stringify({ collection_id: collectionId, topic, title }),
+      }),
+    generatePlan: (collectionId: string, topic: string, planId?: string, signal?: AbortSignal) =>
+      request<{
+        plan_id: string
+        topic: string
+        title?: string | null
+        collection_id?: string
         steps: { index: number; content: string; status?: string }[]
         markdown?: string
       }>('/research/plans:generate', {
         method: 'POST',
-        body: JSON.stringify({ collection_id: collectionId, topic }),
+        body: JSON.stringify({
+          collection_id: collectionId,
+          topic,
+          ...(planId ? { plan_id: planId } : {}),
+        }),
+        signal,
       }),
     updatePlan: (
       planId: string,
@@ -101,6 +147,8 @@ export const api = {
       request<{
         plan_id: string
         topic: string
+        title?: string | null
+        collection_id?: string
         steps: { index: number; content: string; status?: string }[]
       }>(`/research/plans/${planId}`, {
         method: 'PUT',
@@ -114,7 +162,7 @@ export const api = {
         result_markdown?: string
         progress?: string
         output_path?: string
-        logs?: { time: string; message: string; level?: string; document?: string }[]
+        logs?: ResearchJobLogEntry[]
         started_at?: string
       }>('/research/jobs', {
         method: 'POST',
@@ -129,7 +177,7 @@ export const api = {
       collectionId: string,
       planId: string,
       topic: string,
-      onLog: (log: { time: string; message: string; level?: string; document?: string }) => void,
+      onLog: (log: ResearchJobLogEntry) => void,
       signal?: AbortSignal
     ): Promise<{ job_id: string; status: string; result_markdown?: string; output_path?: string }> => {
       const res = await fetch(`${BASE}/research/jobs:stream`, {
@@ -195,22 +243,34 @@ export const api = {
       return result
     },
     listJobs: (limit?: number) =>
-      request<{ job_id: string; topic: string; status: string; progress?: string; started_at?: string; output_path?: string }[]>(
-        limit ? `/research/jobs?limit=${limit}` : '/research/jobs'
-      ),
+      request<
+        {
+          job_id: string
+          topic: string
+          title?: string | null
+          status: string
+          progress?: string
+          started_at?: string
+          output_path?: string
+        }[]
+      >(limit ? `/research/jobs?limit=${limit}` : '/research/jobs'),
     getJob: (jobId: string) =>
       request<{
         job_id: string
         status: string
+        title?: string | null
+        topic?: string
         steps: { index: number; content: string; status?: string }[]
         result_markdown?: string
         progress?: string
         output_path?: string
-        logs?: { time: string; message: string; level?: string; document?: string; agent?: string; response_preview?: string }[]
+        logs?: ResearchJobLogEntry[]
         started_at?: string
       }>(`/research/jobs/${jobId}`),
     cancelJob: (jobId: string) =>
       request<{ ok: boolean }>(`/research/jobs/${jobId}/cancel`, { method: 'POST' }),
+    resumeJob: (jobId: string) =>
+      request<{ ok: boolean }>(`/research/jobs/${jobId}/resume`, { method: 'POST' }),
   },
   prompts: {
     listSlots: () =>

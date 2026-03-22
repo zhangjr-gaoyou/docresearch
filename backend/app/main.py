@@ -30,11 +30,12 @@ app.include_router(api_router, prefix=settings.API_V1_PREFIX)
 
 @app.exception_handler(Exception)
 async def global_exception_handler(request, exc):
-    """Return 500 with error detail for debugging."""
-    logger.exception("Unhandled exception: %s", exc)
+    """Return 500 with error detail for debugging (path helps correlate with browser Network tab)."""
+    path = getattr(request.url, "path", "") if request is not None else ""
+    logger.exception("Unhandled exception on %s: %s", path, exc)
     return JSONResponse(
         status_code=500,
-        content={"detail": str(exc)},
+        content={"detail": str(exc), "path": path},
     )
 
 

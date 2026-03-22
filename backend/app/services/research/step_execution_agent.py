@@ -1,7 +1,8 @@
 """Research step execution agent: executes a single step with prior result and optional doc content."""
+import json
 import os
 import threading
-from typing import Callable, Optional
+from typing import Any, Callable, Dict, Optional
 
 from app.services.research.exceptions import ResearchJobCancelled
 
@@ -39,6 +40,7 @@ def execute_step(
     collection_doc_markdown: str = "",
     doc_label: str = "",
     on_log: Optional[Callable[[str], None]] = None,
+    on_diag: Optional[Callable[[Dict[str, Any]], None]] = None,
     cancel_event: Optional[threading.Event] = None,
 ) -> str:
     """
@@ -59,8 +61,24 @@ def execute_step(
     doc_section = ""
     if collection_doc_markdown.strip():
         doc_content = collection_doc_markdown
+        raw_len = len(collection_doc_markdown)
         if len(doc_content) > MAX_TOTAL_CONTEXT - len(prior_step_markdown) - 500:
             doc_content = doc_content[: MAX_TOTAL_CONTEXT - len(prior_step_markdown) - 500] + "\n\n（内容已截断）"
+            if on_diag:
+                on_diag(
+                    {
+                        "kind": "tool",
+                        "name": "truncate_document_for_step_context",
+                        "detail": json.dumps(
+                            {
+                                "raw_chars": raw_len,
+                                "max_context": MAX_TOTAL_CONTEXT,
+                                "prior_chars": len(prior_step_markdown),
+                            },
+                            ensure_ascii=False,
+                        ),
+                    }
+                )
         doc_section = f"""
 ## 引用的文档内容
 
@@ -88,8 +106,12 @@ def execute_step(
             collection_doc_markdown=collection_doc_markdown,
             doc_label=doc_label,
             on_log=on_log,
+            on_diag=on_diag,
             cancel_event=cancel_event,
         )
+
+    if on_diag:
+        on_diag({"kind": "llm_prompt", "slot": "research.step_execution.main", "text": prompt})
 
     _raise_if_cancelled(cancel_event)
     response = llm.invoke([HumanMessage(content=prompt)])
@@ -105,6 +127,7 @@ def _execute_step_map_reduce(
     collection_doc_markdown: str,
     doc_label: str,
     on_log: Optional[Callable[[str], None]] = None,
+    on_diag: Optional[Callable[[Dict[str, Any]], None]] = None,
     cancel_event: Optional[threading.Event] = None,
 ) -> str:
     """Map-reduce for large document in single step."""
@@ -114,6 +137,22 @@ def _execute_step_map_reduce(
     ]
     if on_log:
         on_log(f"文档较大，拆分为 {len(chunks)} 个片段进行 Map-Reduce")
+    if on_diag:
+        on_diag(
+            {
+                "kind": "tool",
+                "name": "document_split_for_map_reduce",
+                "detail": json.dumps(
+                    {
+                        "total_chars": len(collection_doc_markdown),
+                        "chunk_size": MAX_SINGLE_CHUNK,
+                        "num_chunks": len(chunks),
+                        "doc_label": doc_label,
+                    },
+                    ensure_ascii=False,
+                ),
+            }
+        )
 
     partial_results = []
     for i, chunk in enumerate(chunks):
@@ -128,6 +167,16 @@ def _execute_step_map_reduce(
             chunk_index=i + 1,
             chunk_total=len(chunks),
         )
+        if on_diag:
+            on_diag(
+                {
+                    "kind": "llm_prompt",
+                    "slot": "research.step_execution.map_chunk",
+                    "text": prompt,
+                    "chunk_index": i + 1,
+                    "chunk_total": len(chunks),
+                }
+            )
         response = llm.invoke([HumanMessage(content=prompt)])
         partial_results.append(response.content)
 
@@ -139,6 +188,16 @@ def _execute_step_map_reduce(
         step_content=step_content,
         partial_results=partial_results_str,
     )
+    if on_diag:
+        head = 4000
+        prev = merge_prompt if len(merge_prompt) <= head + 400 else merge_prompt[:head] + f"\n\n…（map_merge 提示词总长 {len(merge_prompt)} 字符，含各片段合并正文，已省略）"
+        on_diag(
+            {
+                "kind": "llm_prompt",
+                "slot": "research.step_execution.map_merge",
+                "text": prev,
+            }
+        )
     _raise_if_cancelled(cancel_event)
     response = llm.invoke([HumanMessage(content=merge_prompt)])
     return response.content.strip()

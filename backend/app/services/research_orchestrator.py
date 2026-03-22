@@ -39,11 +39,63 @@ def _get_llm():
     )
 
 
-def generate_research_plan(collection_id: str, topic: str) -> dict:
-    """Generate research plan steps using plan agent (topic + document names)."""
-    from app.services.research.plan_agent import generate_research_plan as _plan_agent_generate
-    plan = _plan_agent_generate(collection_id, topic)
-    _plans[plan["plan_id"]] = plan
+def create_research_project(collection_id: str, topic: str, title: str) -> dict:
+    """
+    Persist a research project (plan) with empty steps — no LLM call.
+    """
+    t = (topic or "").strip()
+    ti = (title or "").strip()
+    plan_id = str(uuid.uuid4())
+    plan = {
+        "plan_id": plan_id,
+        "collection_id": collection_id,
+        "title": ti,
+        "topic": t,
+        "steps": [],
+        "markdown": f"# {ti}\n\n**研究主题**：{t}\n\n（尚未生成研究步骤，请点击「制定研究计划」）",
+    }
+    _plans[plan_id] = plan
+    _persist_plan(plan)
+    return plan
+
+
+def generate_research_plan(
+    collection_id: str,
+    topic: str,
+    plan_id: Optional[str] = None,
+) -> dict:
+    """
+    Generate research plan steps via LLM.
+    If plan_id is set, update that existing plan in place; otherwise create a new plan_id.
+    """
+    from app.services.research.plan_agent import generate_plan_steps
+
+    t = (topic or "").strip()
+    steps = generate_plan_steps(collection_id, t)
+    md = f"# 研究计划：{t}\n\n" + "\n".join(f"{i + 1}. {s['content']}" for i, s in enumerate(steps))
+
+    if plan_id:
+        plan = get_plan(plan_id)
+        if not plan:
+            raise ValueError(f"Plan {plan_id} not found")
+        plan["collection_id"] = collection_id
+        plan["topic"] = t
+        plan["steps"] = steps
+        plan["markdown"] = md
+        _plans[plan_id] = plan
+        _persist_plan(plan)
+        return plan
+
+    new_id = str(uuid.uuid4())
+    plan = {
+        "plan_id": new_id,
+        "collection_id": collection_id,
+        "topic": t,
+        "title": None,
+        "steps": steps,
+        "markdown": md,
+    }
+    _plans[new_id] = plan
     _persist_plan(plan)
     return plan
 
@@ -107,6 +159,7 @@ def _flush_job_meta(job_id: str, job: dict) -> None:
         "collection_id": job.get("collection_id", ""),
         "plan_id": job.get("plan_id", ""),
         "topic": job.get("topic", ""),
+        "title": job.get("title"),
         "status": job.get("status", "running"),
         "progress": job.get("progress", ""),
         "output_path": job.get("output_path"),
@@ -142,6 +195,7 @@ def _run_research_job_worker(job_id: str) -> None:
         _flush_job_meta(job_id, job)
 
     cancel_event = job.get("cancel_event")
+    resume_flag = bool(job.pop("resume", False))
 
     try:
         final_md, output_path = run_scheduler(
@@ -152,6 +206,7 @@ def _run_research_job_worker(job_id: str) -> None:
             logs=logs,
             on_progress=on_progress,
             cancel_event=cancel_event,
+            resume=resume_flag,
         )
         from app.services.research.tools import list_collection_document_files
         doc_count = len(list_collection_document_files(collection_id))
@@ -197,6 +252,7 @@ def run_research_job(
         "collection_id": collection_id,
         "plan_id": plan_id,
         "topic": topic,
+        "title": plan.get("title"),
         "status": "running",
         "steps": plan["steps"],
         "result_markdown": None,
@@ -233,6 +289,74 @@ def run_research_job(
     return job_id
 
 
+def resume_research_job(job_id: str) -> tuple[bool, str]:
+    """
+    Continue a cancelled (or interrupted-on-disk) job from saved step outputs.
+    Returns (ok, reason): ok | already_running | not_resumable | job_not_found | plan_not_found
+    """
+    job = _jobs.get(job_id)
+    if job:
+        if job.get("status") == "running":
+            return False, "already_running"
+        if job.get("status") != "cancelled":
+            return False, "not_resumable"
+        job["cancel_event"] = threading.Event()
+        job["status"] = "running"
+        job["resume"] = True
+        job["progress"] = "继续执行中…"
+        job["result_markdown"] = None
+        _add_log(job["logs"], "从已保存进度继续执行研究计划", level="info")
+        _flush_job_meta(job_id, job)
+        thread = threading.Thread(target=_run_research_job_worker, args=(job_id,), daemon=True)
+        thread.start()
+        return True, "ok"
+
+    meta = read_job_meta(job_id)
+    if not meta:
+        return False, "job_not_found"
+    if meta.get("status") not in ("cancelled", "interrupted"):
+        return False, "not_resumable"
+
+    plan_id = meta.get("plan_id", "")
+    plan = get_plan(plan_id)
+    if not plan:
+        return False, "plan_not_found"
+
+    coll_id = meta.get("collection_id", "")
+    from app.services.collection_store import get_collection as _get_coll
+    if not _get_coll(coll_id):
+        return False, "collection_not_found"
+
+    logs = _PersistingLogList(job_id)
+    logs.extend(read_job_logs(job_id))
+    write_job_logs(job_id, list(logs))
+
+    output_dir = settings.RESEARCH_OUTPUT_DIR / job_id
+    job = {
+        "job_id": job_id,
+        "collection_id": coll_id,
+        "plan_id": plan_id,
+        "topic": meta.get("topic", ""),
+        "title": meta.get("title") or plan.get("title"),
+        "status": "running",
+        "steps": plan["steps"],
+        "result_markdown": None,
+        "progress": "继续执行中…",
+        "logs": logs,
+        "output_path": meta.get("output_path") or str(output_dir.resolve()),
+        "started_at": meta.get("started_at", ""),
+        "cancel_event": threading.Event(),
+        "resume": True,
+    }
+    _jobs[job_id] = job
+    _flush_job_meta(job_id, job)
+    _add_log(logs, "从磁盘恢复任务并继续执行（跳过已保存的步骤）", level="info")
+
+    thread = threading.Thread(target=_run_research_job_worker, args=(job_id,), daemon=True)
+    thread.start()
+    return True, "ok"
+
+
 def request_cancel_research_job(job_id: str) -> tuple[bool, str]:
     """
     Signal a running in-memory job to stop after the current LLM boundary.
@@ -252,7 +376,12 @@ def request_cancel_research_job(job_id: str) -> tuple[bool, str]:
 def get_job(job_id: str) -> Optional[dict]:
     """Get job by ID. Hydrates from disk if not in memory."""
     if job_id in _jobs:
-        return _jobs[job_id]
+        j = _jobs[job_id]
+        if not j.get("title") and j.get("plan_id"):
+            pl = get_plan(j["plan_id"])
+            if pl and pl.get("title"):
+                j["title"] = pl["title"]
+        return j
 
     meta = read_job_meta(job_id)
     if not meta:
@@ -265,20 +394,30 @@ def get_job(job_id: str) -> Optional[dict]:
     if result_markdown is None and output_path:
         final_path = Path(output_path) / "final.md" if output_path else None
         if final_path and Path(final_path).exists():
-            result_markdown = Path(final_path).read_text(encoding="utf-8")
+            try:
+                result_markdown = Path(final_path).read_text(encoding="utf-8")
+            except OSError:
+                result_markdown = None
     if result_markdown is None:
         final_path = settings.RESEARCH_OUTPUT_DIR / job_id / "final.md"
         if final_path.exists():
-            result_markdown = final_path.read_text(encoding="utf-8")
+            try:
+                result_markdown = final_path.read_text(encoding="utf-8")
+            except OSError:
+                result_markdown = None
 
     plan = get_plan(meta.get("plan_id", "")) if meta.get("plan_id") else None
     steps = plan.get("steps", []) if plan else []
+    display_title = meta.get("title")
+    if not display_title and plan:
+        display_title = plan.get("title")
 
     return {
         "job_id": job_id,
         "collection_id": meta.get("collection_id", ""),
         "plan_id": meta.get("plan_id", ""),
         "topic": meta.get("topic", ""),
+        "title": display_title,
         "status": meta.get("status", "unknown"),
         "steps": steps,
         "result_markdown": result_markdown,
@@ -289,10 +428,20 @@ def get_job(job_id: str) -> Optional[dict]:
     }
 
 
+def _enrich_job_list_row(meta: dict) -> dict:
+    """Ensure list rows have title when plan has one (backfill old job_meta without title)."""
+    row = dict(meta)
+    if not row.get("title") and row.get("plan_id"):
+        pl = get_plan(row["plan_id"])
+        if pl and pl.get("title"):
+            row["title"] = pl["title"]
+    return row
+
+
 def list_jobs(limit: int = 50) -> list[dict]:
     """List research jobs from disk (and merge with in-memory running jobs)."""
     from app.services.job_store import list_jobs as _list_jobs_from_disk
-    disk = _list_jobs_from_disk(limit=limit * 2)
+    disk = [_enrich_job_list_row(m) for m in _list_jobs_from_disk(limit=limit * 2)]
     seen = {j["job_id"] for j in disk}
     for jid, j in _jobs.items():
         if jid not in seen:
@@ -301,13 +450,14 @@ def list_jobs(limit: int = 50) -> list[dict]:
                 "collection_id": j.get("collection_id", ""),
                 "plan_id": j.get("plan_id", ""),
                 "topic": j.get("topic", ""),
+                "title": j.get("title"),
                 "status": j.get("status", "running"),
                 "progress": j.get("progress", ""),
                 "output_path": j.get("output_path"),
                 "started_at": j.get("started_at", ""),
                 "updated_at": datetime.now().isoformat(),
             }
-            disk.insert(0, meta)
+            disk.insert(0, _enrich_job_list_row(meta))
             seen.add(jid)
     disk.sort(key=lambda m: m.get("started_at", ""), reverse=True)
     return disk[:limit]

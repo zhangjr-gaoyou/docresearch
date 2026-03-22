@@ -54,9 +54,16 @@ class RerankResponse(BaseModel):
 
 
 # --- Research ---
+class ResearchProjectCreateRequest(BaseModel):
+    collection_id: str
+    title: str = Field(..., min_length=1, max_length=200)
+    topic: str = Field(..., min_length=1, max_length=2000)
+
+
 class ResearchPlanGenerateRequest(BaseModel):
     collection_id: str
     topic: str
+    plan_id: Optional[str] = None
 
 
 class ResearchStep(BaseModel):
@@ -71,6 +78,7 @@ class ResearchPlanResponse(BaseModel):
     steps: list[ResearchStep]
     markdown: Optional[str] = None
     collection_id: Optional[str] = None
+    title: Optional[str] = None
 
 
 class ResearchPlanUpdateRequest(BaseModel):
@@ -94,9 +102,17 @@ class ResearchLogEntry(BaseModel):
     char_count: Optional[int] = None
     chunk_index: Optional[int] = None
     chunk_total: Optional[int] = None
+    step_index: Optional[int] = None
+    step_total: Optional[int] = None
     step_count: Optional[int] = None
+    need_collection_document: Optional[bool] = None
+    output_path: Optional[str] = None
     agent: Optional[str] = None  # scheduler_route, scheduler_merge, step_execution, etc.
     response_preview: Optional[str] = None  # truncated LLM response
+    prompt_slot: Optional[str] = None  # e.g. research.scheduler.routing
+    prompt_preview: Optional[str] = None  # truncated user/system prompt sent to LLM
+    tool_name: Optional[str] = None  # Python-side IO helper name
+    tool_detail: Optional[str] = None  # short JSON or text describing tool I/O
 
 
 class ResearchJobResponse(BaseModel):
@@ -108,6 +124,7 @@ class ResearchJobResponse(BaseModel):
     output_path: Optional[str] = None  # 输出目录路径（Markdown 文件保存位置）
     logs: Optional[list[ResearchLogEntry]] = None  # 执行日志
     started_at: Optional[str] = None  # ISO 时间，列表与详情用
+    title: Optional[str] = None  # 研究项目标题（列表展示；无则前端可用 topic）
 
 
 # --- Prompts ---

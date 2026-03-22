@@ -14,6 +14,26 @@ def _job_dir(job_id: str) -> Path:
     return settings.RESEARCH_OUTPUT_DIR / job_id
 
 
+def resolve_job_output_dir(job_id: str) -> Optional[Path]:
+    """
+    Return resolved job output directory if it exists and stays under RESEARCH_OUTPUT_DIR.
+    Rejects path traversal (job_id must be a single path segment).
+    """
+    if not job_id or "\x00" in job_id:
+        return None
+    if "/" in job_id or "\\" in job_id or job_id in (".", ".."):
+        return None
+    base = settings.RESEARCH_OUTPUT_DIR.resolve()
+    d = (settings.RESEARCH_OUTPUT_DIR / job_id).resolve()
+    try:
+        d.relative_to(base)
+    except ValueError:
+        return None
+    if not d.is_dir():
+        return None
+    return d
+
+
 def write_job_meta(job_id: str, meta: dict) -> None:
     """Write job_meta.json to job output directory."""
     d = _job_dir(job_id)

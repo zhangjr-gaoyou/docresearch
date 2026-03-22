@@ -10,6 +10,38 @@
           "file_type": "pdf"
         }
       ]
+    },
+    "01b9da6c-d41d-4e22-8004-5c2b7c37e301": {
+      "id": "01b9da6c-d41d-4e22-8004-5c2b7c37e301",
+      "name": "集团采购规定",
+      "documents": [
+        {
+          "id": "72488c07-85f9-415c-b9e3-2606aa796cc7",
+          "filename": "中国华电集团有限公司非招标采购管理办法.docx",
+          "file_type": "docx"
+        },
+        {
+          "id": "06bfa987-3136-4a87-86fb-1379a1e07cde",
+          "filename": "附件：中国华电集团有限公司采购管理办法.docx",
+          "file_type": "docx"
+        },
+        {
+          "id": "8c7ec432-81a2-43e9-aac2-d4ae8cdfec31",
+          "filename": "附件：中国华电集团有限公司招标采购管理办法.docx",
+          "file_type": "docx"
+        }
+      ]
+    },
+    "a1a493e1-f521-49b0-8e96-4408855832fe": {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "name": "招投标法",
+      "documents": [
+        {
+          "id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+          "filename": "中华人民共和国招标投标法(2017修正).pdf",
+          "file_type": "pdf"
+        }
+      ]
     }
   }
 }
