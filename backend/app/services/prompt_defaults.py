@@ -45,6 +45,21 @@ BUILTIN_PROMPTS = {
 - 若某结论在材料中找不到依据，应明确写「文档未提及」或不予断言，不可臆测补全。
 
 输出合并后的完整Markdown报告，按研究主题组织，结构清晰，综合各文档观点，避免简单罗列。""",
+    "research.scheduler.merge_pair": """请将以下两份研究分析片段（各来自不同文档的最后步骤输出）合并为一份连贯的 Markdown 报告。
+
+研究主题：{topic}
+
+### 文档 A：{label_a}
+{content_a}
+
+### 文档 B：{label_b}
+{content_b}
+
+【重要：仅基于上文】
+- 只使用上述两段中已出现的信息进行归纳、去重与结构化；不得引入外部知识或编造事实。
+- 保留表格、列表等 Markdown 结构；若两段有重复观点，合并为一条表述。
+
+输出合并后的完整 Markdown。""",
     "research.step_execution.main": """你是一个文档分析专家。请根据以下研究主题和当前研究步骤，执行本步骤并输出结构化的 Markdown 结果。
 
 研究主题：{topic}
@@ -105,6 +120,10 @@ SLOT_META = {
         "placeholders": ["topic", "step_content", "step_index", "total_steps", "doc_label", "bias"],
     },
     "research.scheduler.merge_final": {"name": "合并最终报告", "placeholders": ["topic", "doc_results"]},
+    "research.scheduler.merge_pair": {
+        "name": "合并最终报告-两两合并",
+        "placeholders": ["topic", "label_a", "content_a", "label_b", "content_b"],
+    },
     "research.step_execution.main": {
         "name": "步骤执行主提示",
         "placeholders": ["topic", "step_content", "step_index", "prior_section", "doc_section"],

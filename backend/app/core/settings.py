@@ -23,6 +23,19 @@ class Settings(BaseSettings):
     EMBEDDING_DIMENSIONS: int = 1024
     RERANK_MODEL: str = "qwen3-rerank"
     LLM_MODEL: str = "qwen-plus"
+    # HTTP client: long merges need a generous timeout (seconds). 0 = LangChain default.
+    LLM_TIMEOUT_SECONDS: float = 600.0
+    LLM_MAX_RETRIES: int = 2
+    # Optional: dedicated model for research final merge (empty = LLM_MODEL)
+    LLM_MERGE_MODEL: str = ""
+    # When full merge_final prompt exceeds this (chars), use pairwise merge rounds.
+    MERGE_MAX_SINGLE_PROMPT_CHARS: int = 45000
+    # Max chars per document body in one pairwise merge call (each side truncated if needed).
+    MERGE_PAIR_MAX_CHARS_EACH: int = 22000
+    # If estimated tokens for merge_final prompt exceed this, skip LLM and concatenate doc outputs.
+    MERGE_SKIP_LLM_OVER_ESTIMATED_TOKENS: int = 10000
+    # Heuristic: estimated_token_count ≈ len(merge_prompt) / MERGE_ESTIMATED_CHARS_PER_TOKEN (zh-heavy ~2).
+    MERGE_ESTIMATED_CHARS_PER_TOKEN: float = 2.0
 
     # Chunking
     CHUNK_SIZE: int = 500

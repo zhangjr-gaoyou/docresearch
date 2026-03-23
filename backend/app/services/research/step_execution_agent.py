@@ -1,15 +1,14 @@
 """Research step execution agent: executes a single step with prior result and optional doc content."""
 import json
-import os
 import threading
 from typing import Any, Callable, Dict, Optional
 
 from app.services.research.exceptions import ResearchJobCancelled
 
-from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 
 from app.core.settings import settings
+from app.services.llm_factory import get_chat_openai
 from app.services.prompt_registry import get_prompt
 
 MAX_SINGLE_CHUNK = 8000
@@ -23,13 +22,7 @@ def _raise_if_cancelled(cancel_event: Optional[threading.Event]) -> None:
 
 def _get_llm(temperature: float = 0.3):
     """Create LLM client for DashScope (Qwen)."""
-    api_key = settings.DASHSCOPE_API_KEY or os.getenv("DASHSCOPE_API_KEY", "")
-    return ChatOpenAI(
-        model=settings.LLM_MODEL,
-        api_key=api_key,
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-        temperature=temperature,
-    )
+    return get_chat_openai(temperature=temperature)
 
 
 def execute_step(

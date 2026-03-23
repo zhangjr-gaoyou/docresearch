@@ -152,11 +152,12 @@ research2/
 
 - **V0.1**（标签 `v0.1`）：首个可运行版本——文档集、向量检索、研究计划与后台任务、提示词管理、任务中止等。
 - **V0.2**（标签 `v0.2`）：研究项目与计划原位生成；执行过程日志增强（提示词预览、工具调用详情，工具类日志带「智能体工具调用：」前缀）；日志写入 `job_logs.json` 并在执行历史（含已完成任务）中展示；相关 API / 前端类型与界面同步。
+- **V0.4**（标签 `v0.4`）：合并最终报告优化——`llm_factory` 统一超时/重试与可选 `LLM_MERGE_MODEL`；超长合并提示词时分轮两两合并（`research.scheduler.merge_pair`）；估算合并提示词 token 超过阈值时跳过模型、直接拼接各文档最后步骤；失败任务写入 `output_path`；相关环境变量见 `backend/.env.example`。
 
 ### 推送到 GitHub（`docresearch`）
 
 1. 在 GitHub 上新建空仓库 **docresearch**（不要初始化 README，避免冲突）。
-2. 若你的账号不是 `zhangjr`，请改远程地址：
+2. 若你的账号不是 `zhangjr_gaoyou`，请改远程地址：
 
    ```bash
    git remote set-url origin https://github.com/<你的用户名>/docresearch.git
@@ -168,6 +169,7 @@ research2/
    git push -u origin main
    git push origin v0.1
    git push origin v0.2
+   git push origin v0.4
    ```
 
 ### 仓库忽略内容说明

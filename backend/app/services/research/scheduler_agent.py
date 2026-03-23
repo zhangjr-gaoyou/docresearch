@@ -1,6 +1,5 @@
 """Research scheduler agent: document x step loop, routing LLM, step execution, merge final."""
 import json
-import os
 import threading
 from datetime import datetime
 from pathlib import Path
@@ -13,10 +12,10 @@ def _raise_if_cancelled(cancel_event: Optional[threading.Event]) -> None:
     if cancel_event is not None and cancel_event.is_set():
         raise ResearchJobCancelled()
 
-from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 
 from app.core.settings import settings
+from app.services.llm_factory import get_chat_openai, get_merge_chat_openai
 from app.services.prompt_registry import get_prompt
 from app.services.research.tools import (
     list_collection_document_files,
@@ -28,14 +27,8 @@ from app.services.research.step_execution_agent import execute_step
 
 
 def _get_llm(temperature: float = 0.3):
-    """Create LLM client for DashScope (Qwen)."""
-    api_key = settings.DASHSCOPE_API_KEY or os.getenv("DASHSCOPE_API_KEY", "")
-    return ChatOpenAI(
-        model=settings.LLM_MODEL,
-        api_key=api_key,
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-        temperature=temperature,
-    )
+    """Create LLM client for DashScope (Qwen), with timeout/retries from settings."""
+    return get_chat_openai(temperature=temperature)
 
 
 MAX_RESPONSE_PREVIEW = 1500
@@ -62,6 +55,184 @@ def _preview_merge_prompt(text: str) -> str:
         text[:MERGE_PROMPT_HEAD]
         + f"\n\n…（合并提示词总长 {len(text)} 字符，内含各文档最后步骤全文，此处省略后续）"
     )
+
+
+def _truncate_merge_body(text: str, max_len: int) -> str:
+    """Truncate one document body for pairwise merge or single-doc overflow."""
+    if len(text) <= max_len:
+        return text
+    omitted = len(text) - max_len
+    return text[:max_len] + f"\n\n…（已截断，省略后续 {omitted} 字符）"
+
+
+def _invoke_llm_markdown(llm, prompt: str) -> str:
+    response = llm.invoke([HumanMessage(content=prompt)])
+    return (response.content or "").strip()
+
+
+def _estimate_merge_prompt_tokens(prompt: str) -> int:
+    """Rough token estimate for merge prompt (no tokenizer dep). Tunable via settings."""
+    ratio = settings.MERGE_ESTIMATED_CHARS_PER_TOKEN
+    if ratio <= 0:
+        ratio = 2.0
+    return max(1, int(len(prompt) / ratio))
+
+
+def _direct_join_merge_markdown(topic: str, last_step_outputs: list[tuple[str, str]]) -> str:
+    """Concatenate each document's last-step markdown without LLM."""
+    lines = [
+        "# 研究报告（直接合并）",
+        "",
+        f"**研究主题**：{topic}",
+        "",
+        "> 合并最终报告提示词估算 token 超过阈值，未调用大模型；以下为各文档最后一步输出原文拼接。",
+        "",
+    ]
+    for i, (name, content) in enumerate(last_step_outputs, 1):
+        lines.append(f"## 文档 {i}：{name}")
+        lines.append("")
+        lines.append(content.strip())
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+    return "\n".join(lines).strip()
+
+
+def _merge_final_reports(
+    topic: str,
+    last_step_outputs: list[tuple[str, str]],
+    logs: list,
+    cancel_event: Optional[threading.Event],
+) -> str:
+    """
+    Run final merge: single merge_final call when prompt fits; else pairwise merge rounds.
+    If estimated merge prompt tokens exceed MERGE_SKIP_LLM_OVER_ESTIMATED_TOKENS, skip LLM and join texts.
+    Raises RuntimeError with logged message on LLM failure.
+    """
+    per_lens = [len(c) for _, c in last_step_outputs]
+    total_body = sum(per_lens)
+    _add_log(
+        logs,
+        f"合并输入统计：文档数 {len(last_step_outputs)}，各文档最后步骤长度 {per_lens}，正文合计约 {total_body} 字符",
+        level="info",
+    )
+
+    doc_results = chr(10).join(f"### 文档：{name}\n{content}" for name, content in last_step_outputs)
+    merge_prompt = get_prompt("research.scheduler.merge_final", topic=topic, doc_results=doc_results)
+    est_tokens = _estimate_merge_prompt_tokens(merge_prompt)
+    skip_cap = settings.MERGE_SKIP_LLM_OVER_ESTIMATED_TOKENS
+    if est_tokens > skip_cap:
+        _add_log(
+            logs,
+            f"合并策略：估算提示词约 {est_tokens} tokens（> {skip_cap}），跳过模型，直接拼接各文档最后步骤（merge_prompt 约 {len(merge_prompt)} 字符）",
+            level="warning",
+        )
+        final_md = _direct_join_merge_markdown(topic, last_step_outputs)
+        _add_log(
+            logs,
+            "合并完成（直接拼接，未调用大模型）",
+            agent="scheduler_merge",
+            response_preview=_truncate(final_md),
+        )
+        return final_md
+
+    merge_llm = get_merge_chat_openai()
+    threshold = settings.MERGE_MAX_SINGLE_PROMPT_CHARS
+    pair_cap = settings.MERGE_PAIR_MAX_CHARS_EACH
+
+    def _single_merge_logged(prompt: str, strategy_note: str) -> str:
+        _add_log(logs, strategy_note, level="info")
+        _add_log(
+            logs,
+            "合并阶段 · 发送提示词",
+            level="info",
+            prompt_slot="research.scheduler.merge_final",
+            prompt_preview=_preview_merge_prompt(prompt),
+        )
+        _raise_if_cancelled(cancel_event)
+        try:
+            return _invoke_llm_markdown(merge_llm, prompt)
+        except Exception as e:
+            _add_log(logs, f"合并阶段失败（单次合并）：{e}", level="error")
+            raise RuntimeError(f"合并阶段失败: {e}") from e
+
+    if len(merge_prompt) <= threshold:
+        final_md = _single_merge_logged(
+            merge_prompt,
+            f"合并策略：单次合并（提示词 {len(merge_prompt)} 字符 ≤ 阈值 {threshold}）",
+        )
+        _add_log(
+            logs,
+            "合并智能体返回",
+            agent="scheduler_merge",
+            response_preview=_truncate(final_md),
+        )
+        return final_md
+
+    if len(last_step_outputs) == 1:
+        name, body = last_step_outputs[0]
+        budget = max(threshold - 8000, 10000)
+        tb = _truncate_merge_body(body, budget)
+        doc_results_t = f"### 文档：{name}\n{tb}"
+        merge_prompt_t = get_prompt("research.scheduler.merge_final", topic=topic, doc_results=doc_results_t)
+        final_md = _single_merge_logged(
+            merge_prompt_t,
+            f"合并策略：仅单文档且提示词超长，已截断正文至约 {len(tb)} 字符后单次合并（原约 {len(body)} 字符）",
+        )
+        _add_log(
+            logs,
+            "合并智能体返回",
+            agent="scheduler_merge",
+            response_preview=_truncate(final_md),
+        )
+        return final_md
+
+    _add_log(
+        logs,
+        f"合并策略：分轮两两合并（merge_final 提示词 {len(merge_prompt)} 字符 > 阈值 {threshold}）",
+        level="info",
+    )
+    parts: list[tuple[str, str]] = list(last_step_outputs)
+    round_num = 0
+    try:
+        while len(parts) > 1:
+            round_num += 1
+            (la, ca), (lb, cb) = parts[0], parts[1]
+            ca_t = _truncate_merge_body(ca, pair_cap)
+            cb_t = _truncate_merge_body(cb, pair_cap)
+            pair_prompt = get_prompt(
+                "research.scheduler.merge_pair",
+                topic=topic,
+                label_a=la,
+                content_a=ca_t,
+                label_b=lb,
+                content_b=cb_t,
+            )
+            _add_log(
+                logs,
+                f"分轮合并 第{round_num}轮：「{la}」+「{lb}」（单侧最多 {pair_cap} 字符，本轮提示词约 {len(pair_prompt)} 字符）",
+                level="info",
+                prompt_slot="research.scheduler.merge_pair",
+                prompt_preview=_preview_merge_prompt(pair_prompt),
+            )
+            _raise_if_cancelled(cancel_event)
+            merged = _invoke_llm_markdown(merge_llm, pair_prompt)
+            merged_label = f"{la}+{lb}"
+            parts = [(merged_label, merged)] + parts[2:]
+        final_md = parts[0][1]
+    except RuntimeError:
+        raise
+    except Exception as e:
+        _add_log(logs, f"合并阶段失败（分轮两两合并）：{e}", level="error")
+        raise RuntimeError(f"合并阶段失败: {e}") from e
+
+    _add_log(
+        logs,
+        "合并智能体返回",
+        agent="scheduler_merge",
+        response_preview=_truncate(final_md),
+    )
+    return final_md
 
 
 def _add_log(logs: list, message: str, level: str = "info", **extra):
@@ -344,26 +515,7 @@ def run_scheduler(
 
     _add_log(logs, f"正在合并 {len(last_step_outputs)} 个文档的最后步骤结果...", level="info")
     _raise_if_cancelled(cancel_event)
-    doc_results = chr(10).join(f"### 文档：{name}\n{content}" for name, content in last_step_outputs)
-    merge_prompt = get_prompt("research.scheduler.merge_final", topic=topic, doc_results=doc_results)
-
-    _add_log(
-        logs,
-        "合并阶段 · 发送提示词",
-        level="info",
-        prompt_slot="research.scheduler.merge_final",
-        prompt_preview=_preview_merge_prompt(merge_prompt),
-    )
-    llm = _get_llm()
-    _raise_if_cancelled(cancel_event)
-    response = llm.invoke([HumanMessage(content=merge_prompt)])
-    final_md = response.content.strip()
-    _add_log(
-        logs,
-        "合并智能体返回",
-        agent="scheduler_merge",
-        response_preview=_truncate(final_md),
-    )
+    final_md = _merge_final_reports(topic, last_step_outputs, logs, cancel_event)
     _add_log(logs, f"合并完成，最终报告 {len(final_md)} 字符", level="info")
 
     final_path = job_output_dir / "final.md"

@@ -1,14 +1,12 @@
 """Research orchestrator: plan generation, step execution, result merging."""
-import os
 import threading
 import uuid
 from datetime import datetime
 from pathlib import Path
 from typing import Callable, List, Optional
 
-from langchain_openai import ChatOpenAI
-
 from app.core.settings import settings
+from app.services.llm_factory import get_chat_openai
 from app.services.job_store import (
     fix_stale_running_jobs,
     read_job_logs,
@@ -30,13 +28,7 @@ fix_stale_running_jobs()
 
 def _get_llm():
     """Create LLM client for DashScope (Qwen)."""
-    api_key = settings.DASHSCOPE_API_KEY or os.getenv("DASHSCOPE_API_KEY", "")
-    return ChatOpenAI(
-        model=settings.LLM_MODEL,
-        api_key=api_key,
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-        temperature=0.3,
-    )
+    return get_chat_openai(temperature=0.3)
 
 
 def create_research_project(collection_id: str, topic: str, title: str) -> dict:
@@ -223,6 +215,7 @@ def _run_research_job_worker(job_id: str) -> None:
     except Exception as e:
         job["status"] = "failed"
         job["progress"] = str(e)
+        job["output_path"] = job.get("output_path") or str(output_dir.resolve())
         _add_log(logs, f"执行失败：{str(e)}", level="error")
     finally:
         _flush_job_meta(job_id, job)

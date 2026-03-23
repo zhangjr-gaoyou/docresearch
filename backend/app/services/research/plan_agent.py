@@ -3,10 +3,10 @@ import json
 import re
 from typing import Callable, List, Optional
 
-from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 
 from app.core.settings import settings
+from app.services.llm_factory import get_chat_openai
 from app.services.prompt_registry import get_prompt
 from app.services.research.tools import (
     get_collection_document_names,
@@ -16,14 +16,7 @@ from app.services.research.tools import (
 
 def _get_llm(temperature: float = 0.3):
     """Create LLM client for DashScope (Qwen)."""
-    import os
-    api_key = settings.DASHSCOPE_API_KEY or os.getenv("DASHSCOPE_API_KEY", "")
-    return ChatOpenAI(
-        model=settings.LLM_MODEL,
-        api_key=api_key,
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-        temperature=temperature,
-    )
+    return get_chat_openai(temperature=temperature)
 
 
 def generate_plan_steps(
