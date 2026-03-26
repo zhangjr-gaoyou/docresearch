@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { Card, Table, Button, Select, Modal, Input, message, Space, Tag } from 'ant-design-vue'
-import { PlusOutlined, EditOutlined, DeleteOutlined, CheckCircleOutlined } from '@ant-design/icons-vue'
+import { PlusOutlined, EditOutlined, DeleteOutlined, CheckCircleOutlined, ReloadOutlined } from '@ant-design/icons-vue'
 import { api } from '@/api/client'
 
 type PromptItem = { id: string; slot_key: string; title: string; content: string; published: boolean; created_at: string; updated_at: string }
@@ -15,6 +15,21 @@ const editingId = ref<string | null>(null)
 const formSlot = ref('')
 const formTitle = ref('')
 const formContent = ref('')
+const slotsLoading = ref(false)
+
+const slotOptions = computed(() =>
+  slots.value.map((s) => ({
+    value: s.slot_key,
+    label: `${s.name} (${s.slot_key})`,
+  }))
+)
+
+const selectedSlotMeta = computed(() => slots.value.find((s) => s.slot_key === formSlot.value))
+const selectedSlotPlaceholderText = computed(() => {
+  const placeholders = selectedSlotMeta.value?.placeholders ?? []
+  if (!placeholders.length) return '该槽位无占位符要求'
+  return `可用占位符：${placeholders.map((p) => `{${p}}`).join('、')}`
+})
 
 const columns = [
   { title: '槽位', dataIndex: 'slot_key', key: 'slot_key' },
@@ -25,7 +40,24 @@ const columns = [
 ]
 
 async function loadSlots() {
-  slots.value = await api.prompts.listSlots()
+  slotsLoading.value = true
+  try {
+    slots.value = await api.prompts.listSlots()
+    if (slotFilter.value && !slots.value.some((s) => s.slot_key === slotFilter.value)) {
+      slotFilter.value = undefined
+    }
+    if (formSlot.value && !slots.value.some((s) => s.slot_key === formSlot.value)) {
+      formSlot.value = slots.value[0]?.slot_key ?? ''
+    }
+  } finally {
+    slotsLoading.value = false
+  }
+}
+
+async function refreshSlotsAndPrompts() {
+  await loadSlots()
+  await loadPrompts()
+  message.success('槽位列表已刷新')
 }
 
 async function loadPrompts() {
@@ -117,9 +149,13 @@ onMounted(() => {
             placeholder="全部槽位"
             allow-clear
             style="width: 200px"
-            :options="[{ value: undefined, label: '全部槽位' }, ...slots.map((s) => ({ value: s.slot_key, label: s.name }))]"
+            :options="[{ value: undefined, label: '全部槽位' }, ...slotOptions]"
             @change="loadPrompts"
           />
+          <Button :loading="slotsLoading" @click="refreshSlotsAndPrompts">
+            <template #icon><ReloadOutlined /></template>
+            刷新槽位
+          </Button>
           <Button type="primary" @click="openCreate">
             <template #icon><PlusOutlined /></template>
             新增提示词
@@ -137,6 +173,7 @@ onMounted(() => {
         <template #bodyCell="{ column, record }">
           <template v-if="column.key === 'slot_key'">
             {{ slots.find((s) => s.slot_key === record.slot_key)?.name ?? record.slot_key }}
+            <span style="color: rgba(0, 0, 0, 0.45)">（{{ record.slot_key }}）</span>
           </template>
           <template v-else-if="column.key === 'published'">
             <Tag v-if="record.published" color="green">已上架</Tag>
@@ -177,8 +214,12 @@ onMounted(() => {
             v-model:value="formSlot"
             :disabled="modalMode === 'edit'"
             style="width: 100%"
-            :options="slots.map((s) => ({ value: s.slot_key, label: s.name }))"
+            :options="slotOptions"
           />
+        </div>
+        <div class="form-row">
+          <span class="label">占位符：</span>
+          <span>{{ selectedSlotPlaceholderText }}</span>
         </div>
         <div class="form-row">
           <span class="label">标题：</span>
@@ -189,7 +230,7 @@ onMounted(() => {
           <Input.TextArea
             v-model:value="formContent"
             :rows="12"
-            placeholder="提示词内容，支持 {topic}、{doc_list_str} 等占位符"
+            :placeholder="`提示词内容。${selectedSlotPlaceholderText}`"
           />
         </div>
         <div class="form-actions">

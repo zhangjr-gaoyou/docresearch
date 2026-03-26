@@ -153,6 +153,8 @@ research2/
 - **V0.1**（标签 `v0.1`）：首个可运行版本——文档集、向量检索、研究计划与后台任务、提示词管理、任务中止等。
 - **V0.2**（标签 `v0.2`）：研究项目与计划原位生成；执行过程日志增强（提示词预览、工具调用详情，工具类日志带「智能体工具调用：」前缀）；日志写入 `job_logs.json` 并在执行历史（含已完成任务）中展示；相关 API / 前端类型与界面同步。
 - **V0.4**（标签 `v0.4`）：合并最终报告优化——`llm_factory` 统一超时/重试与可选 `LLM_MERGE_MODEL`；超长合并提示词时分轮两两合并（`research.scheduler.merge_pair`）；估算合并提示词 token 超过阈值时跳过模型、直接拼接各文档最后步骤；失败任务写入 `output_path`；相关环境变量见 `backend/.env.example`。
+- **V0.5**（标签 `v0.5`）：研究执行稳定性相关迭代（路由/合并温度、合并策略与日志、步骤输出截断检测与校验重试等，详见该标签提交说明）。
+- **V0.6**（标签 `v0.6`）：步骤执行分流——新增提示词槽位 `research.step_execution.first_step` / `research.step_execution.later_step`，首步强制引用原文、后续步骤按路由按需引用；map-reduce 与主路径共用对应槽位语义；`prompt_store` 对已有 `prompts.json` 自动补齐缺失内置槽位；提示词管理页支持刷新槽位、动态占位符提示与槽位 key 展示；数据目录内示例 `prompts` / 配置同步更新。
 
 ### 推送到 GitHub（`docresearch`）
 
@@ -170,6 +172,8 @@ research2/
    git push origin v0.1
    git push origin v0.2
    git push origin v0.4
+   git push origin v0.5
+   git push origin v0.6
    ```
 
 ### 仓库忽略内容说明

@@ -28,6 +28,11 @@ class Settings(BaseSettings):
     LLM_MAX_RETRIES: int = 2
     # Optional: dedicated model for research final merge (empty = LLM_MODEL)
     LLM_MERGE_MODEL: str = ""
+    # Keep key-path deterministic: route and final merge default to temperature 0.
+    ROUTE_TEMPERATURE: float = 0.0
+    FINAL_MERGE_TEMPERATURE: float = 0.0
+    # Merge strategy: pairwise | single | direct_join | auto
+    MERGE_STRATEGY: str = "pairwise"
     # When full merge_final prompt exceeds this (chars), use pairwise merge rounds.
     MERGE_MAX_SINGLE_PROMPT_CHARS: int = 45000
     # Max chars per document body in one pairwise merge call (each side truncated if needed).
@@ -36,6 +41,10 @@ class Settings(BaseSettings):
     MERGE_SKIP_LLM_OVER_ESTIMATED_TOKENS: int = 10000
     # Heuristic: estimated_token_count ≈ len(merge_prompt) / MERGE_ESTIMATED_CHARS_PER_TOKEN (zh-heavy ~2).
     MERGE_ESTIMATED_CHARS_PER_TOKEN: float = 2.0
+    # Step output validation/retry.
+    STEP_OUTPUT_VALIDATE_RETRIES: int = 1
+    # Step main prompt length threshold to switch to map-reduce.
+    STEP_MAIN_PROMPT_MAX_CHARS: int = 12000
 
     # Chunking
     CHUNK_SIZE: int = 500

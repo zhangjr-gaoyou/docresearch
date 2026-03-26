@@ -78,6 +78,40 @@ BUILTIN_PROMPTS = {
 2. 输出 Markdown 格式
 3. 只输出分析结果，不要其他说明
 """,
+    "research.step_execution.first_step": """你是一个文档分析专家。请根据以下研究主题和当前研究步骤，执行本步骤并输出结构化的 Markdown 结果。
+
+研究主题：{topic}
+
+当前步骤（步骤 {step_index}）：{step_content}
+{doc_section}
+
+【重要：首步规则】
+- 这是首个步骤，必须以引用的原始文档内容为主要依据进行提取与结构化分析。
+- 不得引入文档外知识，不得编造；无法从文档得出时写“文档未提及”。
+
+要求：
+1. 严格按当前步骤的说明执行
+2. 输出 Markdown 格式
+3. 只输出分析结果，不要其他说明
+""",
+    "research.step_execution.later_step": """你是一个文档分析专家。请根据以下研究主题和当前研究步骤，执行本步骤并输出结构化的 Markdown 结果。
+
+研究主题：{topic}
+
+当前步骤（步骤 {step_index}）：{step_content}
+{prior_section}
+{doc_section}
+
+【重要：后续步骤规则】
+- 优先基于“上一步骤执行结果”推进当前分析。
+- 若已提供引用文档内容，仅作为补充证据使用；未提供则不得臆测补全。
+- 不得引入文档外知识，不得编造；无法从材料得出时写“文档未提及”。
+
+要求：
+1. 严格按当前步骤的说明执行
+2. 输出 Markdown 格式
+3. 只输出分析结果，不要其他说明
+""",
     "research.step_execution.map_chunk": """分析以下文档片段（第{chunk_index}部分，共{chunk_total}部分），根据研究主题和当前步骤提取信息。
 
 研究主题：{topic}
@@ -126,6 +160,14 @@ SLOT_META = {
     },
     "research.step_execution.main": {
         "name": "步骤执行主提示",
+        "placeholders": ["topic", "step_content", "step_index", "prior_section", "doc_section"],
+    },
+    "research.step_execution.first_step": {
+        "name": "步骤执行-首步提示",
+        "placeholders": ["topic", "step_content", "step_index", "doc_section"],
+    },
+    "research.step_execution.later_step": {
+        "name": "步骤执行-后续提示",
         "placeholders": ["topic", "step_content", "step_index", "prior_section", "doc_section"],
     },
     "research.step_execution.map_chunk": {

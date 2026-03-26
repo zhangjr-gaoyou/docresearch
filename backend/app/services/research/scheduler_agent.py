@@ -70,6 +70,15 @@ def _invoke_llm_markdown(llm, prompt: str) -> str:
     return (response.content or "").strip()
 
 
+def _invoke_llm_markdown_with_reason(llm, prompt: str) -> tuple[str, str]:
+    response = llm.invoke([HumanMessage(content=prompt)])
+    content = (response.content or "").strip()
+    md = getattr(response, "response_metadata", None) or {}
+    ak = getattr(response, "additional_kwargs", None) or {}
+    reason = md.get("finish_reason") or ak.get("finish_reason") or md.get("stop_reason")
+    return content, str(reason or "unknown")
+
+
 def _estimate_merge_prompt_tokens(prompt: str) -> int:
     """Rough token estimate for merge prompt (no tokenizer dep). Tunable via settings."""
     ratio = settings.MERGE_ESTIMATED_CHARS_PER_TOKEN
@@ -121,10 +130,11 @@ def _merge_final_reports(
     merge_prompt = get_prompt("research.scheduler.merge_final", topic=topic, doc_results=doc_results)
     est_tokens = _estimate_merge_prompt_tokens(merge_prompt)
     skip_cap = settings.MERGE_SKIP_LLM_OVER_ESTIMATED_TOKENS
-    if est_tokens > skip_cap:
+    strategy = (settings.MERGE_STRATEGY or "pairwise").strip().lower()
+    if strategy == "auto" and est_tokens > skip_cap:
         _add_log(
             logs,
-            f"合并策略：估算提示词约 {est_tokens} tokens（> {skip_cap}），跳过模型，直接拼接各文档最后步骤（merge_prompt 约 {len(merge_prompt)} 字符）",
+            f"合并策略：auto->direct_join，估算提示词约 {est_tokens} tokens（> {skip_cap}），跳过模型，直接拼接各文档最后步骤（merge_prompt={len(merge_prompt)} chars, finish_reason=n/a）",
             level="warning",
         )
         final_md = _direct_join_merge_markdown(topic, last_step_outputs)
@@ -136,7 +146,22 @@ def _merge_final_reports(
         )
         return final_md
 
-    merge_llm = get_merge_chat_openai()
+    if strategy == "direct_join":
+        _add_log(
+            logs,
+            f"合并策略：direct_join（固定策略），merge_prompt={len(merge_prompt)} chars, est_tokens={est_tokens}, finish_reason=n/a",
+            level="info",
+        )
+        final_md = _direct_join_merge_markdown(topic, last_step_outputs)
+        _add_log(
+            logs,
+            "合并完成（直接拼接，未调用大模型）",
+            agent="scheduler_merge",
+            response_preview=_truncate(final_md),
+        )
+        return final_md
+
+    merge_llm = get_merge_chat_openai(temperature=settings.FINAL_MERGE_TEMPERATURE)
     threshold = settings.MERGE_MAX_SINGLE_PROMPT_CHARS
     pair_cap = settings.MERGE_PAIR_MAX_CHARS_EACH
 
@@ -151,15 +176,22 @@ def _merge_final_reports(
         )
         _raise_if_cancelled(cancel_event)
         try:
-            return _invoke_llm_markdown(merge_llm, prompt)
+            merged, reason = _invoke_llm_markdown_with_reason(merge_llm, prompt)
+            _add_log(
+                logs,
+                f"合并调用结果：strategy=single, prompt_chars={len(prompt)}, finish_reason={reason}",
+                level="info",
+                agent="scheduler_merge",
+            )
+            return merged
         except Exception as e:
             _add_log(logs, f"合并阶段失败（单次合并）：{e}", level="error")
             raise RuntimeError(f"合并阶段失败: {e}") from e
 
-    if len(merge_prompt) <= threshold:
+    if strategy == "single":
         final_md = _single_merge_logged(
             merge_prompt,
-            f"合并策略：单次合并（提示词 {len(merge_prompt)} 字符 ≤ 阈值 {threshold}）",
+            f"合并策略：single（固定策略），prompt_chars={len(merge_prompt)}，阈值参数={threshold}",
         )
         _add_log(
             logs,
@@ -169,7 +201,20 @@ def _merge_final_reports(
         )
         return final_md
 
-    if len(last_step_outputs) == 1:
+    if strategy == "auto" and len(merge_prompt) <= threshold:
+        final_md = _single_merge_logged(
+            merge_prompt,
+            f"合并策略：auto->single（提示词 {len(merge_prompt)} 字符 ≤ 阈值 {threshold}）",
+        )
+        _add_log(
+            logs,
+            "合并智能体返回",
+            agent="scheduler_merge",
+            response_preview=_truncate(final_md),
+        )
+        return final_md
+
+    if strategy == "auto" and len(last_step_outputs) == 1:
         name, body = last_step_outputs[0]
         budget = max(threshold - 8000, 10000)
         tb = _truncate_merge_body(body, budget)
@@ -189,7 +234,10 @@ def _merge_final_reports(
 
     _add_log(
         logs,
-        f"合并策略：分轮两两合并（merge_final 提示词 {len(merge_prompt)} 字符 > 阈值 {threshold}）",
+        (
+            f"合并策略：{'pairwise(固定)' if strategy == 'pairwise' else 'auto->pairwise'}"
+            f"（merge_prompt={len(merge_prompt)} chars, threshold={threshold}, pair_cap={pair_cap}）"
+        ),
         level="info",
     )
     parts: list[tuple[str, str]] = list(last_step_outputs)
@@ -216,7 +264,13 @@ def _merge_final_reports(
                 prompt_preview=_preview_merge_prompt(pair_prompt),
             )
             _raise_if_cancelled(cancel_event)
-            merged = _invoke_llm_markdown(merge_llm, pair_prompt)
+            merged, reason = _invoke_llm_markdown_with_reason(merge_llm, pair_prompt)
+            _add_log(
+                logs,
+                f"合并调用结果：strategy=pairwise, round={round_num}, prompt_chars={len(pair_prompt)}, finish_reason={reason}",
+                level="info",
+                agent="scheduler_merge",
+            )
             merged_label = f"{la}+{lb}"
             parts = [(merged_label, merged)] + parts[2:]
         final_md = parts[0][1]
@@ -266,7 +320,7 @@ def _route_need_collection_document(
     LLM routing: decide whether this step needs the full collection document.
     Returns (need_document, reason).
     """
-    llm = _get_llm(temperature=0.2)
+    llm = _get_llm(temperature=settings.ROUTE_TEMPERATURE)
     bias = "第一步通常需要引用文档全文以了解内容；" if is_first_step else ""
     prompt = get_prompt(
         "research.scheduler.routing",
@@ -286,9 +340,17 @@ def _route_need_collection_document(
             prompt_preview=_truncate_prompt(prompt),
         )
     response = llm.invoke([HumanMessage(content=prompt)])
+    md = getattr(response, "response_metadata", None) or {}
+    ak = getattr(response, "additional_kwargs", None) or {}
+    finish_reason = str(md.get("finish_reason") or ak.get("finish_reason") or md.get("stop_reason") or "unknown")
     text = response.content.strip()
     if logs:
-        _add_log(logs, "路由智能体返回", agent="scheduler_route", response_preview=_truncate(text))
+        _add_log(
+            logs,
+            f"路由智能体返回（prompt_chars={len(prompt)}, finish_reason={finish_reason}）",
+            agent="scheduler_route",
+            response_preview=_truncate(text),
+        )
     # Extract JSON (handle markdown code blocks)
     if "```" in text:
         text = text.split("```")[1]
@@ -393,15 +455,27 @@ def run_scheduler(
                 prior = read_step_result_markdown(job_output_dir, doc_key, step_idx - 1)
                 prior_md = prior if prior is not None else prev_step_result
 
-            need_doc, reason = _route_need_collection_document(
-                topic=topic,
-                step_content=step_content,
-                step_index=step_idx,
-                total_steps=len(steps),
-                doc_label=doc_label,
-                is_first_step=(step_idx == 0),
-                logs=logs,
-            )
+            if step_idx == 0:
+                need_doc, reason = True, "首步强制引用原始文档"
+                _add_log(
+                    logs,
+                    "首步策略：跳过路由模型，强制引用原文",
+                    level="info",
+                    document=doc_label,
+                    step_index=step_idx + 1,
+                    step_total=len(steps),
+                    need_collection_document=True,
+                )
+            else:
+                need_doc, reason = _route_need_collection_document(
+                    topic=topic,
+                    step_content=step_content,
+                    step_index=step_idx,
+                    total_steps=len(steps),
+                    doc_label=doc_label,
+                    is_first_step=False,
+                    logs=logs,
+                )
             _raise_if_cancelled(cancel_event)
 
             _add_log(
@@ -456,7 +530,7 @@ def run_scheduler(
                     _add_tool_log(
                         logs,
                         f"工具：{evt.get('name', '')}",
-                        level="info",
+                        level=str(evt.get("level", "info")),
                         document=doc_label,
                         step_index=step_idx + 1,
                         tool_name=str(evt.get("name", "")),

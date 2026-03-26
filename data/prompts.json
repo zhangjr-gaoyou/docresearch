@@ -79,7 +79,7 @@
       "content": "你是一个文档分析专家。请执行本步骤并输出结构化的 Markdown 结果。\n\n\n当前步骤（步骤 {step_index}）：{step_content}\n\n引用文档\n{prior_section}\n{doc_section}\n\n【重要：仅基于所给材料】\n- 你的依据只能是：本提示中的「研究主题」、上一步骤结果（若有）、以及「引用的文档内容」或「未引用全文」说明所对应范围内已给出的正文。\n- 凡具体事实、数据、观点须能在上述材料中找到对应或合理归纳；材料未出现的内容不得当作事实陈述，应写「文档未提及」或说明无法从文档得出。\n- 禁止使用文档外的常识、网络知识或推测来填补空白；禁止编造。\n\n要求：\n1. 严格按当前步骤的说明执行\n2. 输出 Markdown 格式\n3. 只输出分析结果，不要其他说明\n",
       "published": true,
       "created_at": "2026-03-21T09:04:55.622114",
-      "updated_at": "2026-03-21T09:04:58.904579"
+      "updated_at": "2026-03-26T22:41:24.942770"
     },
     {
       "id": "f5f9304a-4d85-40b0-aad3-3584a2c280ca",
@@ -89,6 +89,33 @@
       "published": true,
       "created_at": "2026-03-22T09:55:54.194928",
       "updated_at": "2026-03-22T10:20:29.383418"
+    },
+    {
+      "id": "2a9c760e-f445-477b-b626-6916fd4fe2a0",
+      "slot_key": "research.scheduler.merge_pair",
+      "title": "合并最终报告-两两合并",
+      "content": "请将以下两份研究分析片段（各来自不同文档的最后步骤输出）合并为一份连贯的 Markdown 报告。\n\n研究主题：{topic}\n\n### 文档 A：{label_a}\n{content_a}\n\n### 文档 B：{label_b}\n{content_b}\n\n【重要：仅基于上文】\n- 只使用上述两段中已出现的信息进行归纳、去重与结构化；不得引入外部知识或编造事实。\n- 保留表格、列表等 Markdown 结构；若两段有重复观点，合并为一条表述。\n\n输出合并后的完整 Markdown。",
+      "published": true,
+      "created_at": "2026-03-27T07:38:45.700112",
+      "updated_at": "2026-03-27T07:38:45.700112"
+    },
+    {
+      "id": "e0799fb3-d58f-4bf6-81f8-f796348bd0b9",
+      "slot_key": "research.step_execution.first_step",
+      "title": "步骤执行-首步提示",
+      "content": "你是一个文档分析专家。请根据以下研究主题和当前研究步骤，执行本步骤并输出结构化的 Markdown 结果。\n\n研究主题：{topic}\n\n当前步骤（步骤 {step_index}）：{step_content}\n{doc_section}\n\n【重要：首步规则】\n- 这是首个步骤，必须以引用的原始文档内容为主要依据进行提取与结构化分析。\n- 不得引入文档外知识，不得编造；无法从文档得出时写“文档未提及”。\n\n要求：\n1. 严格按当前步骤的说明执行\n2. 输出 Markdown 格式\n3. 只输出分析结果，不要其他说明\n",
+      "published": true,
+      "created_at": "2026-03-27T07:38:45.700112",
+      "updated_at": "2026-03-27T07:38:45.700112"
+    },
+    {
+      "id": "1dcdb10d-bc52-4246-99a1-1ca96a991c8d",
+      "slot_key": "research.step_execution.later_step",
+      "title": "步骤执行-后续提示",
+      "content": "你是一个文档分析专家。请根据以下研究主题和当前研究步骤，执行本步骤并输出结构化的 Markdown 结果。\n\n研究主题：{topic}\n\n当前步骤（步骤 {step_index}）：{step_content}\n{prior_section}\n\n【重要：后续步骤规则】\n- 优先基于“上一步骤执行结果”推进当前分析。\n- 若已提供引用文档内容，仅作为补充证据使用；未提供则不得臆测补全。\n- 不得引入文档外知识，不得编造；无法从材料得出时写“文档未提及”。\n\n要求：\n1. 严格按当前步骤的说明执行\n2. 输出 Markdown 格式\n3. 只输出分析结果，不要其他说明\n",
+      "published": true,
+      "created_at": "2026-03-27T07:38:45.700112",
+      "updated_at": "2026-03-27T07:40:44.414919"
     }
   ]
 }

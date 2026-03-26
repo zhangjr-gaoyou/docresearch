@@ -19,26 +19,55 @@ def _load_store() -> dict:
 
 
 def ensure_prompts_initialized() -> None:
-    """Seed prompts.json with built-in defaults if store is empty or missing."""
-    if STORE_PATH.exists():
-        data = _load_store()
-        if data.get("prompts"):
-            return
+    """Seed prompts.json and backfill missing built-in slots."""
+    data = _load_store() if STORE_PATH.exists() else {"prompts": []}
+    prompts = data.get("prompts", [])
     now = datetime.now().isoformat()
-    prompts = []
+
+    # Empty store: seed all built-in slots.
+    if not prompts:
+        seeded = []
+        for slot_key, content in BUILTIN_PROMPTS.items():
+            meta = SLOT_META.get(slot_key, {})
+            title = meta.get("name", slot_key)
+            seeded.append(
+                {
+                    "id": str(uuid.uuid4()),
+                    "slot_key": slot_key,
+                    "title": title,
+                    "content": content,
+                    "published": True,
+                    "created_at": now,
+                    "updated_at": now,
+                }
+            )
+        _save_store({"prompts": seeded})
+        return
+
+    # Existing store: add missing slots with default published prompt.
+    existing_slots = {str(p.get("slot_key", "")) for p in prompts if p.get("slot_key")}
+    added = False
     for slot_key, content in BUILTIN_PROMPTS.items():
+        if slot_key in existing_slots:
+            continue
         meta = SLOT_META.get(slot_key, {})
         title = meta.get("name", slot_key)
-        prompts.append({
-            "id": str(uuid.uuid4()),
-            "slot_key": slot_key,
-            "title": title,
-            "content": content,
-            "published": True,
-            "created_at": now,
-            "updated_at": now,
-        })
-    _save_store({"prompts": prompts})
+        prompts.append(
+            {
+                "id": str(uuid.uuid4()),
+                "slot_key": slot_key,
+                "title": title,
+                "content": content,
+                "published": True,
+                "created_at": now,
+                "updated_at": now,
+            }
+        )
+        added = True
+
+    if added:
+        data["prompts"] = prompts
+        _save_store(data)
 
 
 def _save_store(data: dict) -> None:
