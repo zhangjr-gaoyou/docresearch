@@ -28,6 +28,8 @@ def get_chat_openai(
         kw["timeout"] = settings.LLM_TIMEOUT_SECONDS
     if settings.LLM_MAX_RETRIES is not None and settings.LLM_MAX_RETRIES >= 0:
         kw["max_retries"] = settings.LLM_MAX_RETRIES
+    if getattr(settings, "LLM_MAX_OUTPUT_TOKENS", None) and int(settings.LLM_MAX_OUTPUT_TOKENS) > 0:
+        kw["max_tokens"] = int(settings.LLM_MAX_OUTPUT_TOKENS)
     return ChatOpenAI(**kw)
 
 

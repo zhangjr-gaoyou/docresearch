@@ -120,6 +120,7 @@ def _invoke_step_with_retry(
         content = (response.content or "").strip()
         last_content = content
         finish_reason = _extract_finish_reason(response)
+        err = _validate_step_output(step_content, content)
         if _is_truncated_finish_reason(finish_reason):
             _report_truncation(
                 slot=slot,
@@ -131,7 +132,7 @@ def _invoke_step_with_retry(
                 chunk_index=chunk_index,
                 chunk_total=chunk_total,
             )
-        err = _validate_step_output(step_content, content)
+            err = err or "模型输出因达到最大生成长度被截断"
         if not err:
             return content
         if attempt >= retries:
@@ -168,16 +169,135 @@ def _invoke_step_with_retry(
                     "chunk_total": chunk_total,
                 }
             )
+        extra = ""
+        if "截断" in err:
+            extra = "输出可能被长度限制截断：请输出完整结果；可精简单元格文字但须保留全部数据行，并保证 Markdown 表格完整闭合。"
         current_prompt = (
             current_prompt
             + "\n\n【输出纠正要求】\n"
-            + f"上一版输出存在结构问题：{err}。\n"
+            + f"上一版输出存在问题：{err}。\n"
+            + extra
             + "请严格按当前步骤要求，仅输出符合格式的结果，不要添加额外解释。"
         )
 
 
 def _should_use_map_reduce_for_main_prompt(prompt: str) -> bool:
     return len(prompt) > int(settings.STEP_MAIN_PROMPT_MAX_CHARS)
+
+
+def _truncate_map_partial(text: str, max_len: int) -> str:
+    if len(text) <= max_len:
+        return text
+    omitted = len(text) - max_len
+    return text[:max_len] + f"\n\n…（已截断，省略后续约 {omitted} 字符）"
+
+
+def _split_markdown_blocks(s: str, max_chunk: int) -> list[str]:
+    """Split long markdown near newlines so map_merge inputs stay smaller (avoids one huge completion)."""
+    if max_chunk <= 0 or len(s) <= max_chunk:
+        return [s]
+    parts: list[str] = []
+    start = 0
+    n = len(s)
+    while start < n:
+        end = min(n, start + max_chunk)
+        if end < n:
+            cut = s.rfind("\n", max(0, end - 2500), end)
+            if cut > start:
+                end = cut
+        parts.append(s[start:end].rstrip())
+        start = end
+    return [p for p in parts if p]
+
+
+def _map_merge_prompt_length(topic: str, step_content: str, partial_blob: str) -> int:
+    return len(
+        get_prompt(
+            "research.step_execution.map_merge",
+            topic=topic,
+            step_content=step_content,
+            partial_results=partial_blob,
+        )
+    )
+
+
+def _tree_reduce_map_partials(
+    llm,
+    topic: str,
+    step_content: str,
+    partials: list[str],
+    depth: int,
+    on_log: Optional[Callable[[str], None]],
+    on_diag: Optional[Callable[[Dict[str, Any]], None]],
+    cancel_event: Optional[threading.Event],
+) -> str:
+    """
+    Reduce multiple map-phase partial Markdown results using repeated map_merge.
+    Avoids a single giant merge prompt (and a single huge completion) when many chunks exist.
+    """
+    _raise_if_cancelled(cancel_event)
+    max_depth = max(1, int(settings.STEP_MAP_MERGE_MAX_DEPTH))
+    if depth > max_depth:
+        raise RuntimeError(
+            f"map_merge 分层合并超过最大深度 {max_depth}，请拆小计划步骤或提高 STEP_MAP_MERGE_MAX_DEPTH"
+        )
+    if len(partials) == 1:
+        return partials[0]
+    mid = len(partials) // 2
+    left = _tree_reduce_map_partials(
+        llm, topic, step_content, partials[:mid], depth + 1, on_log, on_diag, cancel_event
+    )
+    right = _tree_reduce_map_partials(
+        llm, topic, step_content, partials[mid:], depth + 1, on_log, on_diag, cancel_event
+    )
+    pair_cap = max(4000, int(settings.STEP_MAP_MERGE_PAIR_MAX_CHARS_EACH))
+    merge_cap = int(settings.STEP_MAP_MERGE_MAX_PROMPT_CHARS)
+    left_t = _truncate_map_partial(left, pair_cap)
+    right_t = _truncate_map_partial(right, pair_cap)
+    blob = f"{left_t}\n\n---\n\n{right_t}"
+    for _ in range(8):
+        if _map_merge_prompt_length(topic, step_content, blob) <= merge_cap:
+            break
+        pair_cap = max(3000, int(pair_cap * 0.72))
+        left_t = _truncate_map_partial(left, pair_cap)
+        right_t = _truncate_map_partial(right, pair_cap)
+        blob = f"{left_t}\n\n---\n\n{right_t}"
+    merge_prompt = get_prompt(
+        "research.step_execution.map_merge",
+        topic=topic,
+        step_content=step_content,
+        partial_results=blob,
+    )
+    if on_log:
+        on_log(
+            f"map_merge 分层合并（深度 {depth}）：左右片段约 {len(left_t)} / {len(right_t)} 字符，"
+            f"提示词约 {len(merge_prompt)} 字符"
+        )
+    if on_diag:
+        head = 2800
+        prev = (
+            merge_prompt
+            if len(merge_prompt) <= head + 400
+            else merge_prompt[:head] + f"\n\n…（map_merge 分层提示词总长 {len(merge_prompt)} 字符，已省略）"
+        )
+        on_diag(
+            {
+                "kind": "llm_prompt",
+                "slot": "research.step_execution.map_merge",
+                "text": prev,
+                "chunk_index": depth + 1,
+                "chunk_total": None,
+            }
+        )
+    _raise_if_cancelled(cancel_event)
+    return _invoke_step_with_retry(
+        llm=llm,
+        prompt=merge_prompt,
+        slot="research.step_execution.map_merge",
+        step_content=step_content,
+        on_log=on_log,
+        on_diag=on_diag,
+    )
 
 
 def _build_doc_section(
@@ -336,7 +456,7 @@ def execute_step(
                 "name": "step_prompt_too_long_map_reduce",
                 "detail": json.dumps(
                     {
-                        "slot": "research.step_execution.main",
+                        "slot": slot,
                         "prompt_chars": len(prompt),
                         "threshold": threshold,
                         "decision": "map_reduce" if use_map_reduce else "direct",
@@ -451,29 +571,51 @@ def _execute_step_map_reduce(
         partial_results.append(chunk_out)
 
     _raise_if_cancelled(cancel_event)
-    partial_results_str = chr(10).join(partial_results)
-    merge_prompt = get_prompt(
-        "research.step_execution.map_merge",
-        topic=topic,
-        step_content=step_content,
-        partial_results=partial_results_str,
-    )
+    if len(partial_results) == 1:
+        return partial_results[0]
+    merge_cap = int(settings.STEP_MAP_MERGE_MAX_PROMPT_CHARS)
+    max_piece = max(6000, int(settings.STEP_MAP_MERGE_PAIR_MAX_CHARS_EACH))
+    expanded: list[str] = []
+    for p in partial_results:
+        expanded.extend(_split_markdown_blocks(p, max_piece))
+    flat = "\n\n---\n\n".join(expanded)
+    for _ in range(8):
+        if len(expanded) <= 1:
+            break
+        if _map_merge_prompt_length(topic, step_content, flat) <= merge_cap:
+            break
+        max_piece = max(4000, int(max_piece * 0.72))
+        expanded = []
+        for p in partial_results:
+            expanded.extend(_split_markdown_blocks(p, max_piece))
+        flat = "\n\n---\n\n".join(expanded)
+    if len(expanded) == 1:
+        return expanded[0]
     if on_diag:
-        head = 4000
-        prev = merge_prompt if len(merge_prompt) <= head + 400 else merge_prompt[:head] + f"\n\n…（map_merge 提示词总长 {len(merge_prompt)} 字符，含各片段合并正文，已省略）"
         on_diag(
             {
-                "kind": "llm_prompt",
-                "slot": "research.step_execution.map_merge",
-                "text": prev,
+                "kind": "tool",
+                "name": "map_merge_tree_reduce",
+                "detail": json.dumps(
+                    {
+                        "num_partial_chunks_before_split": len(partial_results),
+                        "num_partial_chunks_after_split": len(expanded),
+                        "flat_join_chars": len(flat),
+                        "max_prompt_chars": merge_cap,
+                        "pair_max_each": int(settings.STEP_MAP_MERGE_PAIR_MAX_CHARS_EACH),
+                        "max_piece_used": max_piece,
+                    },
+                    ensure_ascii=False,
+                ),
             }
         )
-    _raise_if_cancelled(cancel_event)
-    return _invoke_step_with_retry(
+    return _tree_reduce_map_partials(
         llm=llm,
-        prompt=merge_prompt,
-        slot="research.step_execution.map_merge",
+        topic=topic,
         step_content=step_content,
+        partials=expanded,
+        depth=0,
         on_log=on_log,
         on_diag=on_diag,
+        cancel_event=cancel_event,
     )

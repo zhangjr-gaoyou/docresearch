@@ -280,12 +280,19 @@ def _merge_final_reports(
         _add_log(logs, f"合并阶段失败（分轮两两合并）：{e}", level="error")
         raise RuntimeError(f"合并阶段失败: {e}") from e
 
-    _add_log(
-        logs,
-        "合并智能体返回",
-        agent="scheduler_merge",
-        response_preview=_truncate(final_md),
-    )
+    if round_num == 0:
+        _add_log(
+            logs,
+            "合并阶段：仅单份文档，未调用合并模型；最终报告为该文档最后一步输出（写入 final.md）",
+            level="info",
+        )
+    else:
+        _add_log(
+            logs,
+            "合并智能体返回",
+            agent="scheduler_merge",
+            response_preview=_truncate(final_md),
+        )
     return final_md
 
 
