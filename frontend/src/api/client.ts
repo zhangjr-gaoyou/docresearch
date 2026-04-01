@@ -25,6 +25,45 @@ export type ResearchJobLogEntry = {
   tool_detail?: string
 }
 
+export type KnowledgeLogEntry = {
+  time: string
+  message: string
+  level?: string
+  document?: string
+  step?: string
+  detail?: string
+}
+
+export type KnowledgeResultItem = {
+  id: string
+  collection_id: string
+  document_id: string
+  document_name: string
+  result_type: string
+  title: string
+  content: string
+  tags: string[]
+  extra?: Record<string, unknown> | null
+  created_at: string
+  updated_at: string
+}
+
+export type KnowledgeRetrieveCitation = {
+  layer: string
+  document_id?: string
+  document_name?: string
+  section_path?: string
+  score: number
+  content: string
+  metadata?: Record<string, unknown> | null
+}
+
+export type KnowledgeRetrieveLog = {
+  time: string
+  message: string
+  level?: string
+}
+
 async function request<T>(
   path: string,
   options: RequestInit & { signal?: AbortSignal } = {}
@@ -72,16 +111,24 @@ export const api = {
         `/collections/${collectionId}/documents/${documentId}`,
         { method: 'DELETE' }
       ),
+    crawlDocument: (collectionId: string, url: string) =>
+      request<{ document: { id: string; filename: string; file_type: string } }>(
+        `/collections/${collectionId}/crawl`,
+        {
+          method: 'POST',
+          body: JSON.stringify({ url }),
+        }
+      ),
   },
   search: {
     search: (collectionId: string, query: string, topK: number) =>
-      request<{ results: { content: string; score: number; document_id: string }[] }>(
-        '/search',
-        {
-          method: 'POST',
-          body: JSON.stringify({ collection_id: collectionId, query, top_k: topK }),
-        }
-      ),
+      request<{
+        results: { content: string; score: number; document_id: string; metadata?: Record<string, unknown> }[]
+        llm_summary?: string | null
+      }>('/search', {
+        method: 'POST',
+        body: JSON.stringify({ collection_id: collectionId, query, top_k: topK }),
+      }),
     rerank: (query: string, documents: string[], topN?: number) =>
       request<{ results: { content: string; score: number; index: number }[] }>(
         '/search/rerank',
@@ -296,5 +343,96 @@ export const api = {
         `/prompts/${id}:publish`,
         { method: 'POST' }
       ),
+  },
+  knowledge: {
+    createJob: (collectionId: string) =>
+      request<{
+        job_id: string
+        collection_id: string
+        status: string
+        progress?: string
+        logs: KnowledgeLogEntry[]
+        started_at?: string
+        updated_at?: string
+      }>('/knowledge/jobs', {
+        method: 'POST',
+        body: JSON.stringify({ collection_id: collectionId }),
+      }),
+    listJobs: (limit?: number) =>
+      request<
+        {
+          job_id: string
+          collection_id: string
+          status: string
+          progress?: string
+          started_at?: string
+          updated_at?: string
+          logs: KnowledgeLogEntry[]
+        }[]
+      >(limit ? `/knowledge/jobs?limit=${limit}` : '/knowledge/jobs'),
+    getJob: (jobId: string) =>
+      request<{
+        job_id: string
+        collection_id: string
+        status: string
+        progress?: string
+        logs: KnowledgeLogEntry[]
+        started_at?: string
+        updated_at?: string
+      }>(`/knowledge/jobs/${jobId}`),
+    cancelJob: (jobId: string) =>
+      request<{ ok: boolean }>(`/knowledge/jobs/${jobId}/cancel`, { method: 'POST' }),
+    listResults: (params: {
+      collection_id: string
+      document_id?: string
+      result_type?: string
+      keyword?: string
+    }) => {
+      const sp = new URLSearchParams()
+      sp.set('collection_id', params.collection_id)
+      if (params.document_id) sp.set('document_id', params.document_id)
+      if (params.result_type) sp.set('result_type', params.result_type)
+      if (params.keyword) sp.set('keyword', params.keyword)
+      return request<KnowledgeResultItem[]>(`/knowledge/results?${sp.toString()}`)
+    },
+    createResult: (body: {
+      collection_id: string
+      document_id: string
+      document_name: string
+      result_type: string
+      title: string
+      content: string
+      tags: string[]
+      extra?: Record<string, unknown>
+    }) =>
+      request<KnowledgeResultItem>('/knowledge/results', {
+        method: 'POST',
+        body: JSON.stringify(body),
+      }),
+    updateResult: (
+      id: string,
+      body: { title?: string; content?: string; tags?: string[]; extra?: Record<string, unknown> }
+    ) =>
+      request<KnowledgeResultItem>(`/knowledge/results/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(body),
+      }),
+    deleteResult: (id: string) =>
+      request<{ ok: boolean }>(`/knowledge/results/${id}`, { method: 'DELETE' }),
+    getGraph: (collectionId: string, limit = 300) =>
+      request<{ nodes: Record<string, unknown>[]; edges: Record<string, unknown>[] }>(
+        `/knowledge/graph?collection_id=${encodeURIComponent(collectionId)}&limit=${limit}`
+      ),
+    retrieve: (collectionId: string, query: string, topK = 8) =>
+      request<{
+        answer: string
+        route: string
+        citations: KnowledgeRetrieveCitation[]
+        retrieved_chunks: Record<string, unknown>[]
+        logs: KnowledgeRetrieveLog[]
+      }>('/knowledge/retrieve', {
+        method: 'POST',
+        body: JSON.stringify({ collection_id: collectionId, query, top_k: topK }),
+      }),
   },
 }

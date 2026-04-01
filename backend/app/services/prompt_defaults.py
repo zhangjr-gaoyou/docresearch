@@ -145,6 +145,179 @@ BUILTIN_PROMPTS = {
 
 输出合并后的完整 Markdown，结构清晰，避免重复。""",
     "search.rerank_instruct": "Given a web search query, retrieve relevant passages that answer the query.",
+    "knowledge.extract.summary": """你是知识提取助手。请基于文档内容提取文档概要。
+
+研究主题：{topic}
+文档内容：
+---
+{document_text}
+---
+
+输出 JSON：
+{{"title":"文档概要","summary":"不超过300字","tags":["标签1","标签2"]}}
+仅输出 JSON。""",
+    "knowledge.extract.structure": """你是知识提取助手。请提取文档结构（章节、段落说明与段落正文）。
+
+研究主题：{topic}
+文档内容：
+---
+{document_text}
+---
+
+输出 JSON：
+{{"title":"文档结构","sections":[{{"id":"sec_1","name":"章节名","summary":"章节说明"}}],"paragraph_notes":[{{"name":"段落名","section_ref":"sec_1","summary":"段落说明","content":"段落正文（尽量保留原文关键句，可适度压缩）"}}]}}
+要求：
+1) sections 必须输出稳定 id（建议 sec_序号）。
+2) paragraph_notes 必须输出 section_ref，并引用 sections.id。
+3) paragraph_notes 必须输出 content 字段，不可省略。
+4) content 优先引用原文段落关键句，避免仅重复 summary。
+5) summary 控制在 50-100 字，content 可更长但保持可读。
+仅输出 JSON。""",
+    "knowledge.extract.key_points": """你是知识提取助手。请抽取需要特别标注的知识点并打标签。
+
+研究主题：{topic}
+文档内容：
+---
+{document_text}
+---
+
+输出 JSON：
+{{"title":"知识点","points":[{{"point":"知识点内容","tags":["标签A","标签B"]}}]}}
+仅输出 JSON。""",
+    "knowledge.extract.domain": """你是业务领域识别助手。请根据文档概要与正文，识别该文档对应的业务领域。
+
+研究主题：{topic}
+文档概要（JSON）：
+{summary_json}
+
+文档内容：
+---
+{document_text}
+---
+
+输出 JSON：
+{{"domain":"业务领域名称","description":"简短说明","confidence":0.0}}
+仅输出 JSON。""",
+    "knowledge.extract.ontology": """你是知识图谱本体设计助手。请基于业务领域生成参考实体类别和标准谓语。
+
+研究主题：{topic}
+业务领域（JSON）：
+{domain_json}
+
+文档概要（JSON）：
+{summary_json}
+
+文档内容：
+---
+{document_text}
+---
+
+输出 JSON：
+{{"entity_types":["类型A","类型B"],"predicates":["谓语A","谓语B"],"notes":"可选说明"}}
+仅输出 JSON。""",
+    "knowledge.extract.graph_candidates": """你是知识图谱候选抽取助手。请先从文档中抽取候选实体与候选关系，输出尽可能完整但不要编造。
+
+研究主题：{topic}
+业务领域（JSON）：
+{domain_json}
+
+领域本体（JSON）：
+{ontology_json}
+
+文档概要（JSON）：
+{summary_json}
+
+文档内容：
+---
+{document_text}
+---
+
+已提取知识点（JSON）：
+{points_json}
+
+输出 JSON：
+{{"title":"知识图谱候选","entities":[{{"id":"e1","label":"实体名","type":"候选类型","confidence":0.0,"source_spans":[{{"text":"证据片段","start":-1,"end":-1}}]}}],"relationships":[{{"source":"e1","target":"e2","relation":"候选谓语","confidence":0.0,"evidence_text":"证据文本","evidence_span":{{"start":-1,"end":-1}}}}]}}
+仅输出 JSON。""",
+    "knowledge.extract.schema_align": """你是知识图谱 schema 对齐助手。请将候选实体/关系严格对齐到领域本体。
+
+研究主题：{topic}
+业务领域（JSON）：
+{domain_json}
+
+领域本体（JSON）：
+{ontology_json}
+
+候选抽取结果（JSON）：
+{candidates_json}
+
+文档内容（用于校验）：
+---
+{document_text}
+---
+
+要求：
+1) 节点类型尽量映射到 ontology_json.entity_types，无法映射可用 "Entity" 并给 align_reason。
+2) 关系谓语尽量映射到 ontology_json.predicates，无法映射可用 "RELATED_TO" 并给 align_reason。
+3) 不可支持或明显错误的关系可丢弃，并在 schema_proposals 中给出可扩展建议。
+
+输出 JSON：
+{{"title":"知识图谱对齐","nodes":[{{"id":"e1","label":"实体名","type":"规范类型","original_type":"原类型","align_reason":"matched","confidence":0.0,"aliases":[],"source_spans":[]}}],"edges":[{{"source":"e1","target":"e2","relation":"规范谓语","original_relation":"原谓语","align_reason":"matched","confidence":0.0,"evidence_text":"证据文本","evidence_span":{{"start":-1,"end":-1}}}}],"schema_proposals":[{{"kind":"predicate","name":"候选谓语","reason":"扩展建议原因","confidence":0.0}}]}}
+仅输出 JSON。""",
+    "knowledge.extract.entity_resolve": """你是知识图谱实体归一助手。请对已对齐实体做同文档别名归一，输出 canonical_map。
+
+研究主题：{topic}
+业务领域（JSON）：
+{domain_json}
+
+已对齐图谱（JSON）：
+{aligned_json}
+
+文档内容（用于校验）：
+---
+{document_text}
+---
+
+输出 JSON：
+{{"canonical_map":{{"原实体id":"规范实体id"}},"merged_aliases":0}}
+仅输出 JSON。""",
+    "knowledge.extract.graph": """你是知识图谱提取助手。请从文档与知识点中抽取图谱节点和关系。
+
+研究主题：{topic}
+业务领域（JSON）：
+{domain_json}
+
+领域本体（JSON）：
+{ontology_json}
+
+文档概要（JSON）：
+{summary_json}
+
+文档内容：
+---
+{document_text}
+---
+
+已提取知识点（JSON）：
+{points_json}
+
+候选抽取结果（JSON）：
+{candidates_json}
+
+schema 对齐结果（JSON）：
+{aligned_json}
+
+实体归一结果（JSON）：
+{resolved_json}
+
+【本体约束（必须遵守）】
+- 节点类型优先使用 ontology_json.entity_types 中的类别；若无法匹配再使用 "Entity"。
+- 关系谓语优先使用 ontology_json.predicates 中的谓语；若无法匹配统一映射为 "RELATED_TO"。
+- source/target 必须引用 nodes 中已存在的 id，禁止悬空边。
+- 仅保留可由文档内容支持的关系，不得编造。
+
+输出 JSON：
+{{"title":"知识图谱","nodes":[{{"id":"n1","label":"节点","type":"Entity"}}],"edges":[{{"source":"n1","target":"n2","relation":"关联"}}]}}
+仅输出 JSON。""",
 }
 
 SLOT_META = {
@@ -179,4 +352,50 @@ SLOT_META = {
         "placeholders": ["topic", "step_content", "partial_results"],
     },
     "search.rerank_instruct": {"name": "检索重排指令", "placeholders": []},
+    "knowledge.extract.summary": {
+        "name": "知识提取-文档概要",
+        "placeholders": ["topic", "document_text"],
+    },
+    "knowledge.extract.structure": {
+        "name": "知识提取-文档结构",
+        "placeholders": ["topic", "document_text"],
+    },
+    "knowledge.extract.key_points": {
+        "name": "知识提取-知识点与标签",
+        "placeholders": ["topic", "document_text"],
+    },
+    "knowledge.extract.domain": {
+        "name": "知识提取-业务领域识别",
+        "placeholders": ["topic", "summary_json", "document_text"],
+    },
+    "knowledge.extract.ontology": {
+        "name": "知识提取-领域本体生成",
+        "placeholders": ["topic", "domain_json", "summary_json", "document_text"],
+    },
+    "knowledge.extract.graph_candidates": {
+        "name": "知识提取-图谱候选抽取",
+        "placeholders": ["topic", "domain_json", "ontology_json", "summary_json", "document_text", "points_json"],
+    },
+    "knowledge.extract.schema_align": {
+        "name": "知识提取-schema对齐",
+        "placeholders": ["topic", "domain_json", "ontology_json", "candidates_json", "document_text"],
+    },
+    "knowledge.extract.entity_resolve": {
+        "name": "知识提取-实体归一",
+        "placeholders": ["topic", "domain_json", "aligned_json", "document_text"],
+    },
+    "knowledge.extract.graph": {
+        "name": "知识提取-知识图谱",
+        "placeholders": [
+            "topic",
+            "domain_json",
+            "ontology_json",
+            "summary_json",
+            "document_text",
+            "points_json",
+            "candidates_json",
+            "aligned_json",
+            "resolved_json",
+        ],
+    },
 }

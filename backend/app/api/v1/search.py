@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException
 
 from app.models.schemas import SearchRequest, SearchResponse, SearchResultItem, RerankRequest, RerankResponse, RerankResultItem
 from app.services.vector_store import VectorStore
-from app.services.retrieval import search_and_rerank
+from app.services.retrieval import search_and_rerank, summarize_vector_results
 from app.services.rerank import rerank_documents
 from app.services.collection_store import get_collection
 
@@ -22,6 +22,8 @@ def search_endpoint(body: SearchRequest):
         top_k=body.top_k,
     )
 
+    summary = summarize_vector_results(body.query, results) if results else ""
+
     return SearchResponse(
         results=[
             SearchResultItem(
@@ -31,7 +33,8 @@ def search_endpoint(body: SearchRequest):
                 metadata=r.get("metadata"),
             )
             for r in results
-        ]
+        ],
+        llm_summary=summary or None,
     )
 
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
-import { Card, Form, Input, Select, Button, Alert, List, Space, InputNumber, message, Popconfirm, Spin } from 'ant-design-vue'
+import { Card, Form, Input, Select, Button, Alert, List, Space, InputNumber, message, Popconfirm, Spin, Row, Col } from 'ant-design-vue'
 import { PlusOutlined, UploadOutlined, SearchOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 import { api } from '@/api/client'
 
@@ -13,11 +13,14 @@ const uploadFiles = ref<File[]>([])
 const query = ref('')
 const topK = ref(10)
 const searchResults = ref<{ content: string; score: number; document_id: string }[]>([])
+const searchLlmSummary = ref('')
 const loading = ref(false)
 const uploadLoading = ref(false)
+const crawlLoading = ref(false)
 const documentsLoading = ref(false)
 const deletingDocId = ref<string | null>(null)
 const documents = ref<{ id: string; filename: string; file_type: string }[]>([])
+const sourceUrl = ref('')
 const error = ref('')
 
 async function loadCollections() {
@@ -62,6 +65,37 @@ async function upload() {
   }
 }
 
+function isValidHttpUrl(value: string): boolean {
+  try {
+    const u = new URL(value)
+    return u.protocol === 'http:' || u.protocol === 'https:'
+  } catch (_) {
+    return false
+  }
+}
+
+async function crawlFromUrl() {
+  if (!selectedId.value || !sourceUrl.value.trim()) return
+  const url = sourceUrl.value.trim()
+  if (!isValidHttpUrl(url)) {
+    message.error('请输入有效的网页地址（http/https）')
+    return
+  }
+  try {
+    error.value = ''
+    crawlLoading.value = true
+    await api.collections.crawlDocument(selectedId.value, url)
+    sourceUrl.value = ''
+    await loadDocuments()
+    message.success('网页抓取并入库成功')
+  } catch (e) {
+    error.value = (e as Error).message
+    message.error((e as Error)?.message ?? '抓取失败')
+  } finally {
+    crawlLoading.value = false
+  }
+}
+
 async function search() {
   if (!selectedId.value || !query.value.trim()) return
   try {
@@ -69,10 +103,12 @@ async function search() {
     loading.value = true
     const res = await api.search.search(selectedId.value, query.value.trim(), topK.value)
     searchResults.value = res.results
+    searchLlmSummary.value = (res.llm_summary || '').trim()
     message.success(`检索到 ${res.results.length} 条结果`)
   } catch (e) {
     error.value = (e as Error).message
     searchResults.value = []
+    searchLlmSummary.value = ''
     message.error((e as Error)?.message ?? '操作失败')
   } finally {
     loading.value = false
@@ -203,36 +239,66 @@ onMounted(async () => {
         </Spin>
       </Card>
 
-      <Card title="上传文档 (PDF / DOCX)" size="small">
-        <Space>
-          <input
-            ref="fileInput"
-            type="file"
-            multiple
-            accept=".pdf,.docx,.md"
-            @change="onFileChange"
-            style="display: none"
-          />
-          <Button
-            :disabled="!selectedId"
-            @click="fileInput?.click()"
-          >
-            <template #icon><UploadOutlined /></template>
-            选择文件
-          </Button>
-          <span v-if="uploadFiles.length" class="file-count">
-            已选 {{ uploadFiles.length }} 个文件
-          </span>
-          <Button
-            type="primary"
-            :loading="uploadLoading"
-            :disabled="!selectedId || !uploadFiles.length"
-            @click="upload"
-          >
-            上传
-          </Button>
-        </Space>
-      </Card>
+      <Row :gutter="[16, 16]">
+        <Col :xs="24" :md="12">
+          <Card title="上传文档 (PDF / DOCX / MD)" size="small" class="full-height-card">
+            <Space direction="vertical" style="width: 100%">
+              <Space>
+                <input
+                  ref="fileInput"
+                  type="file"
+                  multiple
+                  accept=".pdf,.docx,.md"
+                  @change="onFileChange"
+                  style="display: none"
+                />
+                <Button
+                  :disabled="!selectedId"
+                  @click="fileInput?.click()"
+                >
+                  <template #icon><UploadOutlined /></template>
+                  选择文件
+                </Button>
+                <Button
+                  type="primary"
+                  :loading="uploadLoading"
+                  :disabled="!selectedId || !uploadFiles.length"
+                  @click="upload"
+                >
+                  上传
+                </Button>
+              </Space>
+              <span v-if="uploadFiles.length" class="file-count">
+                已选 {{ uploadFiles.length }} 个文件
+              </span>
+              <span v-else class="file-count">支持 .pdf / .docx / .md</span>
+            </Space>
+          </Card>
+        </Col>
+        <Col :xs="24" :md="12">
+          <Card title="增加网页源" size="small" class="full-height-card">
+            <Space direction="vertical" style="width: 100%">
+              <Input
+                v-model:value="sourceUrl"
+                :disabled="!selectedId"
+                placeholder="输入网页地址，如 https://example.com/article"
+                @press-enter="crawlFromUrl"
+              />
+              <Space>
+                <Button
+                  type="primary"
+                  :loading="crawlLoading"
+                  :disabled="!selectedId || !sourceUrl.trim()"
+                  @click="crawlFromUrl"
+                >
+                  爬取
+                </Button>
+                <span class="file-count">将提取正文并保存为 Markdown 文档</span>
+              </Space>
+            </Space>
+          </Card>
+        </Col>
+      </Row>
 
       <Card title="向量查询" size="small">
         <Form layout="inline" :label-col="{ span: 0 }" class="search-form">
@@ -259,6 +325,10 @@ onMounted(async () => {
             </Button>
           </Form.Item>
         </Form>
+        <div v-if="searchLlmSummary && searchResults.length" class="search-llm-summary">
+          <div class="search-llm-summary-title">大模型总结（基于下列检索片段）</div>
+          <div class="search-llm-summary-body">{{ searchLlmSummary }}</div>
+        </div>
         <List
           v-if="searchResults.length"
           :data-source="searchResults"
@@ -305,6 +375,25 @@ onMounted(async () => {
 .result-list {
   margin-top: 16px;
 }
+.search-llm-summary {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 8px;
+}
+.search-llm-summary-title {
+  font-weight: 500;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.75);
+  margin-bottom: 8px;
+}
+.search-llm-summary-body {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(0, 0, 0, 0.88);
+  white-space: pre-wrap;
+}
 .result-header {
   font-weight: 500;
 }
@@ -342,5 +431,8 @@ onMounted(async () => {
   font-size: 13px;
   color: rgba(0, 0, 0, 0.45);
   padding: 8px 0;
+}
+.full-height-card {
+  height: 100%;
 }
 </style>

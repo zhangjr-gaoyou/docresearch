@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     UPLOADS_DIR: Path = DATA_DIR / "uploads"
     INDEX_DIR: Path = DATA_DIR / "faiss_index"
     RESEARCH_OUTPUT_DIR: Path = DATA_DIR / "research_output"
+    KNOWLEDGE_OUTPUT_DIR: Path = DATA_DIR / "knowledge_output"
 
     # Alibaba Bailian (DashScope)
     DASHSCOPE_API_KEY: str = ""
@@ -61,12 +62,18 @@ class Settings(BaseSettings):
     # API
     API_V1_PREFIX: str = "/api/v1"
     CORS_ORIGINS: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
+    # Neo4j (optional; required for graph persistence)
+    NEO4J_URI: str = ""
+    NEO4J_USER: str = ""
+    NEO4J_PASSWORD: str = ""
+    NEO4J_DATABASE: str = "neo4j"
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
         self.INDEX_DIR.mkdir(parents=True, exist_ok=True)
         self.RESEARCH_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+        self.KNOWLEDGE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 settings = Settings()

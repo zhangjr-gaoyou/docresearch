@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
 import { ConfigProvider, Layout, Menu, MenuItem } from 'ant-design-vue'
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
-import { FileTextOutlined, SearchOutlined, MenuFoldOutlined, MenuUnfoldOutlined, FormOutlined } from '@ant-design/icons-vue'
+import { FileTextOutlined, SearchOutlined, MenuFoldOutlined, MenuUnfoldOutlined, FormOutlined, ApartmentOutlined } from '@ant-design/icons-vue'
 
 const route = useRoute()
 const selectedKeys = computed(() => [route.path])
@@ -38,6 +38,12 @@ const toggleCollapsed = () => { collapsed.value = !collapsed.value }
               <span>文档研究</span>
             </RouterLink>
           </MenuItem>
+          <MenuItem key="/knowledge">
+            <RouterLink to="/knowledge">
+              <ApartmentOutlined />
+              <span>知识提取</span>
+            </RouterLink>
+          </MenuItem>
           <MenuItem key="/prompts">
             <RouterLink to="/prompts">
               <FormOutlined />
@@ -52,7 +58,15 @@ const toggleCollapsed = () => { collapsed.value = !collapsed.value }
             <MenuUnfoldOutlined v-if="collapsed" />
             <MenuFoldOutlined v-else />
           </span>
-          <span class="header-title">{{ route.path === '/' ? '文档集管理' : route.path === '/prompts' ? '提示词管理' : '文档研究' }}</span>
+          <span class="header-title">{{
+            route.path === '/'
+              ? '文档集管理'
+              : route.path === '/research'
+                ? '文档研究'
+                : route.path === '/knowledge'
+                  ? '知识提取'
+                  : '提示词管理'
+          }}</span>
         </Layout.Header>
         <Layout.Content class="app-content">
           <div class="content-inner">

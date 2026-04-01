@@ -116,6 +116,114 @@
       "published": true,
       "created_at": "2026-03-27T07:38:45.700112",
       "updated_at": "2026-03-27T07:40:44.414919"
+    },
+    {
+      "id": "9c2ffec5-4529-4302-8e49-f9067a1ce792",
+      "slot_key": "knowledge.extract.summary",
+      "title": "知识提取-文档概要",
+      "content": "你是知识提取助手。请基于文档内容提取文档概要。\n\n文档内容：\n---\n{document_text}\n---\n\n输出 JSON：\n{{\"title\":\"文档概要\",\"summary\":\"不超过300字\",\"tags\":[\"标签1\",\"标签2\"]}}\n仅输出 JSON。",
+      "published": true,
+      "created_at": "2026-03-31T14:39:37.649088",
+      "updated_at": "2026-03-31T16:56:04.803741"
+    },
+    {
+      "id": "82907928-59b2-43cd-aa25-adc19c79aeae",
+      "slot_key": "knowledge.extract.structure",
+      "title": "知识提取-文档结构",
+      "content": "你是知识提取助手。请提取文档结构（章节、段落说明与段落正文）。\n\n文档内容：\n---\n{document_text}\n---\n\n输出 JSON：\n{{\"title\":\"文档结构\",\"sections\":[{{\"id\":\"sec_1\",\"name\":\"章节名\",\"summary\":\"章节说明\"}}],\"paragraph_notes\":[{{\"name\":\"段落名\",\"section_ref\":\"sec_1\",\"summary\":\"段落说明\",\"content\":\"段落正文（尽量保留原文关键句，可适度压缩）\"}}]}}\n要求：\n1) sections 必须输出稳定 id（建议 sec_序号）。\n2) paragraph_notes 必须输出 section_ref，并引用 sections.id。\n3) paragraph_notes 必须输出 content 字段，不可省略。\n4) content 优先引用原文段落关键句，避免仅重复 summary。\n5) summary 控制在 50-100 字，content 可更长但保持可读。\n仅输出 JSON。",
+      "published": false,
+      "created_at": "2026-03-31T14:39:37.649088",
+      "updated_at": "2026-03-31T16:49:03.051902"
+    },
+    {
+      "id": "293665f1-703c-4b10-8678-b8cb260bab02",
+      "slot_key": "knowledge.extract.key_points",
+      "title": "知识提取-知识点与标签",
+      "content": "你是知识提取助手。请抽取需要特别标注的知识点并打标签。\n\n研究主题：{topic}\n文档内容：\n---\n{document_text}\n---\n\n输出 JSON：\n{{\"title\":\"知识点\",\"points\":[{{\"point\":\"知识点内容\",\"tags\":[\"标签A\",\"标签B\"]}}]}}\n仅输出 JSON。",
+      "published": true,
+      "created_at": "2026-03-31T14:39:37.649088",
+      "updated_at": "2026-03-31T14:39:37.649088"
+    },
+    {
+      "id": "add09c4d-302f-498f-a1e1-5eee2851ae9d",
+      "slot_key": "knowledge.extract.graph",
+      "title": "知识提取-知识图谱",
+      "content": "你是知识图谱提取助手。请从文档与知识点中抽取图谱节点和关系。\n\n研究主题：{topic}\n文档内容：\n---\n{document_text}\n---\n\n已提取知识点（JSON）：\n{points_json}\n\n输出 JSON：\n{{\"title\":\"知识图谱\",\"nodes\":[{{\"id\":\"n1\",\"label\":\"节点\",\"type\":\"Entity\"}}],\"edges\":[{{\"source\":\"n1\",\"target\":\"n2\",\"relation\":\"关联\"}}]}}\n仅输出 JSON。",
+      "published": false,
+      "created_at": "2026-03-31T14:39:37.649088",
+      "updated_at": "2026-03-31T14:39:37.649088"
+    },
+    {
+      "id": "9950af67-bc6f-4a08-bf80-c5eca9e7753a",
+      "slot_key": "knowledge.extract.graph",
+      "title": "知识图谱生成V2",
+      "content": "# Role\n你是一个顶级的知识图谱架构师和自然语言处理专家。你擅长从复杂的非结构化文本中精准地提取实体、关系和属性，并转化为高质量知识图谱。\n\n# Task\n请基于输入文档，抽取三元组并输出标准 JSON 图谱。\n\n# Domain Context\n业务领域（JSON）：\n{domain_json}\n\n领域本体（JSON）：\n{ontology_json}\n\n文档概要（JSON）：\n{summary_json}\n\n# Ontology Constraints (必须遵守)\n1. 节点类型优先使用 ontology_json.entity_types。\n2. 关系谓语优先使用 ontology_json.predicates。\n3. 若关系不匹配标准谓语，统一映射为 RELATED_TO。\n4. source/target 必须引用 nodes 中已存在的 id。\n5. 仅提取文档可支持的事实，不得编造。\n\n# Output Format\n仅输出纯 JSON，不要 markdown，不要解释。\n\n{\n  \"title\": \"知识图谱\",\n  \"nodes\": [\n    {\"id\": \"实体ID\", \"label\": \"展示名\", \"type\": \"实体类型\", \"attributes\": {\"description\": \"可选描述\"}}\n  ],\n  \"edges\": [\n    {\"source\": \"主语ID\", \"target\": \"宾语ID\", \"relation\": \"标准谓语\"}\n  ]\n}\n\n# Input Text\n请处理以下文本：\n---\n{document_text}\n---\n\n已提取知识点（JSON）：\n{points_json}\n\n仅输出 JSON。",
+      "published": false,
+      "created_at": "2026-03-31T15:27:06.137605",
+      "updated_at": "2026-03-31T16:27:36.022978"
+    },
+    {
+      "id": "15b2a305-09cf-4665-9800-57bc300b77de",
+      "slot_key": "knowledge.extract.structure",
+      "title": "文档结构提取V2",
+      "content": "你是一位专业的文档结构分析师。请分析以下文本，识别其结构类型（文档、章节、段落说明与段落正文）。\n\n###结构关系\n通常一个文档文件包含内容的整体结构如下：文档-> 章节 -> 段落 -> 段落正文。\n他们之间的关系是：\n1、一个文件可能有多个文档合并组成的。\n2、一个文档分一到多个章节\n3、一个章节有一到多个段落。\n4、每个段落有一个正文原文。\n\n\n###任务说明\n1、需要保证文档-> 章节 -> 段落 -> 段落正文之间的关系正确，不要错误的搭配。\n\n文档内容：\n---\n{document_text}\n---\n\n输出 JSON：\n{{\"title\":\"文档结构\",\"sections\":[{{\"id\":\"sec_1\",\"name\":\"章节名\",\"summary\":\"章节说明\"}}],\"paragraph_notes\":[{{\"name\":\"段落名\",\"section_ref\":\"sec_1\",\"summary\":\"段落说明\",\"content\":\"段落正文（尽量保留原文关键句，可适度压缩）\"}}]}}\n要求：\n1) sections 必须输出稳定 id（建议 sec_序号）。\n2) paragraph_notes 必须输出 section_ref，并引用 sections.id。\n3) paragraph_notes 必须输出 content 字段，不可省略。\n4) content 优先引用原文段落关键句，避免仅重复 summary。\n5) summary 控制在 50-100 字，content 可更长但保持可读。\n仅输出 JSON。",
+      "published": true,
+      "created_at": "2026-03-31T16:51:16.620129",
+      "updated_at": "2026-04-01T15:40:54.326278"
+    },
+    {
+      "id": "07af6293-3ead-4144-be83-6a8e26fb4e82",
+      "slot_key": "knowledge.extract.domain",
+      "title": "知识提取-业务领域识别",
+      "content": "你是业务领域识别助手。请根据文档概要与正文，识别该文档对应的业务领域。\n\n研究主题：{topic}\n文档概要（JSON）：\n{summary_json}\n\n文档内容：\n---\n{document_text}\n---\n\n输出 JSON：\n{{\"domain\":\"业务领域名称\",\"description\":\"简短说明\",\"confidence\":0.0}}\n仅输出 JSON。",
+      "published": true,
+      "created_at": "2026-03-31T17:25:16.605270",
+      "updated_at": "2026-03-31T17:25:16.605270"
+    },
+    {
+      "id": "da386840-43f0-4c21-9013-d25de759af3b",
+      "slot_key": "knowledge.extract.ontology",
+      "title": "知识提取-领域本体生成",
+      "content": "你是知识图谱本体设计助手。请基于业务领域生成参考实体类别和标准谓语。\n\n研究主题：{topic}\n业务领域（JSON）：\n{domain_json}\n\n文档概要（JSON）：\n{summary_json}\n\n文档内容：\n---\n{document_text}\n---\n\n输出 JSON：\n{{\"entity_types\":[\"类型A\",\"类型B\"],\"predicates\":[\"谓语A\",\"谓语B\"],\"notes\":\"可选说明\"}}\n仅输出 JSON。",
+      "published": true,
+      "created_at": "2026-03-31T17:25:16.605270",
+      "updated_at": "2026-03-31T17:25:16.605270"
+    },
+    {
+      "id": "c9c2810b-c6e3-410e-86dc-1154a62caa3f",
+      "slot_key": "knowledge.extract.graph",
+      "title": "知识图谱抽取V3",
+      "content": "# Role\n你是一个顶级的知识图谱架构师和自然语言处理专家。你擅长从复杂的非结构化文本中精准地提取实体（Entities）、关系（Relationships）和属性（Attributes），并将其转化为高质量的知识图谱数据结构。\n\n# Task\n你的任务是阅读输入文档，并结合候选抽取、schema对齐、实体归一结果，输出最终图谱 JSON。\n\n# Domain Context\n{domain_json}\n\n# Ontology (本体定义)\n{ontology_json}\n\n# Candidate/Aligned Context\n候选抽取（JSON）：\n{candidates_json}\n\nschema对齐（JSON）：\n{aligned_json}\n\n实体归一（JSON）：\n{resolved_json}\n\n# Input Text\n请处理以下文本：\n---\n{document_text}\n---\n\n已提取知识点（JSON）：\n{points_json}\n\n# Output Requirements\n1. 输出节点和边，且尽量沿用对齐后的 type/relation。\n2. 为节点和边补充 confidence（0~1）、align_reason、evidence_text/evidence_span。\n3. 关系若证据不足可不输出，不得编造。\n4. 仅输出纯 JSON，不要 markdown，不要解释。\n\n输出 JSON：\n{\"title\":\"知识图谱\",\"nodes\":[{\"id\":\"n1\",\"label\":\"节点\",\"type\":\"Entity\",\"attributes\":{},\"confidence\":0.0,\"align_reason\":\"matched\"}],\"edges\":[{\"source\":\"n1\",\"target\":\"n2\",\"relation\":\"关联\",\"confidence\":0.0,\"align_reason\":\"matched\",\"evidence_text\":\"证据\",\"evidence_span\":{\"start\":-1,\"end\":-1}}]}",
+      "published": true,
+      "created_at": "2026-03-31T19:08:20.241935",
+      "updated_at": "2026-03-31T19:08:24.591700"
+    },
+    {
+      "id": "f2b6fc5f-9f4e-4fd9-a351-3f8a8bc18d01",
+      "slot_key": "knowledge.extract.graph_candidates",
+      "title": "图谱候选抽取V1",
+      "content": "你是知识图谱候选抽取助手。请先从文档中抽取候选实体与候选关系，输出尽可能完整但不要编造。\n\n研究主题：{topic}\n业务领域（JSON）：\n{domain_json}\n\n领域本体（JSON）：\n{ontology_json}\n\n文档概要（JSON）：\n{summary_json}\n\n文档内容：\n---\n{document_text}\n---\n\n已提取知识点（JSON）：\n{points_json}\n\n输出 JSON：\n{{\"title\":\"知识图谱候选\",\"entities\":[{{\"id\":\"e1\",\"label\":\"实体名\",\"type\":\"候选类型\",\"confidence\":0.0,\"source_spans\":[{{\"text\":\"证据片段\",\"start\":-1,\"end\":-1}}]}}],\"relationships\":[{{\"source\":\"e1\",\"target\":\"e2\",\"relation\":\"候选谓语\",\"confidence\":0.0,\"evidence_text\":\"证据文本\",\"evidence_span\":{{\"start\":-1,\"end\":-1}}}}]}}\n仅输出 JSON。",
+      "published": true,
+      "created_at": "2026-04-02T00:00:00.000000",
+      "updated_at": "2026-04-02T00:00:00.000000"
+    },
+    {
+      "id": "4257f4ab-00ff-4e03-bef7-e64c2bb58ad4",
+      "slot_key": "knowledge.extract.schema_align",
+      "title": "图谱Schema对齐V1",
+      "content": "你是知识图谱 schema 对齐助手。请将候选实体/关系严格对齐到领域本体。\n\n业务领域（JSON）：\n{domain_json}\n\n领域本体（JSON）：\n{ontology_json}\n\n候选抽取结果（JSON）：\n{candidates_json}\n\n文档内容：\n---\n{document_text}\n---\n\n要求：\n1) 节点类型优先映射到 ontology_json.entity_types。\n2) 关系谓语优先映射到 ontology_json.predicates。\n3) 无法映射时可用 Entity/RELATED_TO，并写 align_reason。\n4) 对可能的新类型/新谓语写入 schema_proposals。\n\n输出 JSON：\n{{\"title\":\"知识图谱对齐\",\"nodes\":[{{\"id\":\"e1\",\"label\":\"实体名\",\"type\":\"规范类型\",\"original_type\":\"原类型\",\"align_reason\":\"matched\",\"confidence\":0.0,\"aliases\":[],\"source_spans\":[]}}],\"edges\":[{{\"source\":\"e1\",\"target\":\"e2\",\"relation\":\"规范谓语\",\"original_relation\":\"原谓语\",\"align_reason\":\"matched\",\"confidence\":0.0,\"evidence_text\":\"证据文本\",\"evidence_span\":{{\"start\":-1,\"end\":-1}}}}],\"schema_proposals\":[{{\"kind\":\"predicate\",\"name\":\"候选谓语\",\"reason\":\"扩展建议\",\"confidence\":0.0}}]}}\n仅输出 JSON。",
+      "published": true,
+      "created_at": "2026-04-02T00:00:00.000000",
+      "updated_at": "2026-04-01T17:05:53.785812"
+    },
+    {
+      "id": "8d5b6644-df9d-4d02-a79f-f3076ea8b153",
+      "slot_key": "knowledge.extract.entity_resolve",
+      "title": "图谱实体归一V1",
+      "content": "你是知识图谱实体归一助手。请对已对齐实体做同文档别名归一，输出 canonical_map。\n\n研究主题：{topic}\n业务领域（JSON）：\n{domain_json}\n\n已对齐图谱（JSON）：\n{aligned_json}\n\n文档内容：\n---\n{document_text}\n---\n\n输出 JSON：\n{{\"canonical_map\":{{\"原实体id\":\"规范实体id\"}},\"merged_aliases\":0}}\n仅输出 JSON。",
+      "published": true,
+      "created_at": "2026-04-02T00:00:00.000000",
+      "updated_at": "2026-04-02T00:00:00.000000"
     }
   ]
 }

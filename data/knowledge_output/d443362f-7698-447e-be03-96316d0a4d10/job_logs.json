@@ -1,0 +1,21 @@
+[
+  {
+    "time": "14:39:26",
+    "message": "开始知识提取，文档数：3",
+    "level": "info"
+  },
+  {
+    "time": "14:39:26",
+    "message": "[1/3] 读取文档",
+    "level": "info",
+    "document": "016e0359-5561-45d6-8c6d-6ca374de097f.pdf",
+    "step": "read"
+  },
+  {
+    "time": "14:39:26",
+    "message": "[1/3] 执行知识提取",
+    "level": "info",
+    "document": "016e0359-5561-45d6-8c6d-6ca374de097f.pdf",
+    "step": "extract"
+  }
+]

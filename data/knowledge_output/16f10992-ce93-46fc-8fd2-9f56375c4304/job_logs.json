@@ -1,0 +1,33 @@
+[
+  {
+    "time": "16:27:52",
+    "message": "开始知识提取，文档数：1",
+    "level": "info"
+  },
+  {
+    "time": "16:27:52",
+    "message": "[1/1] 读取文档",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "read"
+  },
+  {
+    "time": "16:27:52",
+    "message": "[1/1] 执行知识提取",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "extract"
+  },
+  {
+    "time": "16:31:17",
+    "message": "[1/1] 完成：summary/structure/knowledge_points/graph",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "done"
+  },
+  {
+    "time": "16:31:17",
+    "message": "知识提取完成",
+    "level": "success"
+  }
+]

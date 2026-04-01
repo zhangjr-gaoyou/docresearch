@@ -1,0 +1,68 @@
+[
+  {
+    "time": "16:20:51",
+    "message": "开始知识提取，文档数：1",
+    "level": "info"
+  },
+  {
+    "time": "16:20:51",
+    "message": "[1/1] 读取文档",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "read"
+  },
+  {
+    "time": "16:20:51",
+    "message": "[1/1] 执行知识提取",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "extract"
+  },
+  {
+    "time": "16:29:44",
+    "message": "[1/1] 业务领域识别：政府采购与工程招投标",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "domain"
+  },
+  {
+    "time": "16:29:44",
+    "message": "[1/1] 领域本体生成：实体类型20，谓语20",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "ontology"
+  },
+  {
+    "time": "16:29:44",
+    "message": "[1/1] 本体约束映射：关系映射2，类型降级0，弃边0",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "graph_constraint"
+  },
+  {
+    "time": "16:29:44",
+    "message": "[1/1] 结构关系修复：section_ref_invalid=0，paragraph_relinked=0，unmatched_paragraph=0",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "structure_relation"
+  },
+  {
+    "time": "16:29:44",
+    "message": "[1/1] 图谱质量指标：对齐率0.93，降级率0.00，弃边率0.00，实体归一0，扩展建议2",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "graph_quality"
+  },
+  {
+    "time": "16:29:46",
+    "message": "[1/1] 完成：summary/structure/knowledge_points/graph",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "done"
+  },
+  {
+    "time": "16:29:46",
+    "message": "知识提取完成",
+    "level": "success"
+  }
+]

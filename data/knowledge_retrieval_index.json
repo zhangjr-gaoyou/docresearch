@@ -1,0 +1,2828 @@
+{
+  "items": [
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:summary",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "summary",
+      "content": "《中华人民共和国招标投标法（2017修正）》是我国规范招标投标活动的基本法律，旨在保护国家利益、社会公共利益及当事人合法权益，保障项目质量与经济效益。全文共六章六十八条，涵盖总则、招标、投标、开标评标中标、法律责任及附则。核心内容包括：强制招标范围（大型基建、国有资金项目、国际贷款项目）；公开招标与邀请招标程序；招标人、投标人、招标代理机构的权利义务；评标委员会组成与评标规则；中标条件与合同订立要求；以及对规避招标、串通投标、违法分包等行为的严格法律责任。该法强调公开、公平、公正和诚实信用原则，并确立行政监督机制。",
+      "section_path": "文档概要",
+      "metadata": {
+        "title": "文档概要",
+        "tags": [
+          "招标投标",
+          "法律规范",
+          "政府采购",
+          "工程监管",
+          "行政责任"
+        ]
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:sec:0",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定立法目的、适用范围、必须招标的工程建设项目范围及标准、规避招标的禁止性规定，以及招标投标活动应遵循的基本原则和监督机制。",
+      "section_path": "第一章 总则",
+      "metadata": {
+        "level": "section"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:sec:1",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "明确招标人资格与义务、招标审批与资金要求、招标方式（公开/邀请）、重点项目邀请招标的批准程序，以及招标代理机构的设立条件、行为规范与委托规则。",
+      "section_path": "第二章 招标",
+      "metadata": {
+        "level": "section"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:sec:2",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "界定投标人主体资格，规定投标文件编制要求、提交时限与效力，允许补充修改及撤回，明确联合体投标规则、分包限制、串通投标与弄虚作假等禁止行为。",
+      "section_path": "第三章 投标",
+      "metadata": {
+        "level": "section"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:sec:3",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规范开标时间地点与程序、评标委员会组成与保密要求、评标标准与否决权、中标条件、中标通知书效力、合同订立及履约保证金等关键环节。",
+      "section_path": "第四章 开标、评标和中标",
+      "metadata": {
+        "level": "section"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:sec:4",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "系统设定对规避招标、违法代理、歧视排斥、泄露信息、串通投标、弄虚作假、违规谈判、违法分包、背离合同等违法行为的行政处罚种类、幅度及后果（如中标无效、资格取消等）。",
+      "section_path": "第五章 法律责任",
+      "metadata": {
+        "level": "section"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:sec:5",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定异议与投诉权利、例外不招标情形（涉密、抢险、扶贫等）、涉外贷款项目法律适用例外、以及本法施行日期等兜底性条款。",
+      "section_path": "第六章 附则",
+      "metadata": {
+        "level": "section"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:0",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "阐明立法目的：规范招标投标活动，保护国家利益、社会公共利益及当事人合法权益，提高经济效益，保证项目质量。",
+      "section_path": "第一条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:0",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "为了规范招标投标活动，保护国家利益、社会公共利益和招标投标活动当事人的合法权益，提高经济效益，保证项目质量，制定本法。",
+      "section_path": "第一条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:1",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "明确本法的空间效力，即在中华人民共和国境内进行的招标投标活动均适用本法。",
+      "section_path": "第二条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:1",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "在中华人民共和国境内进行招标投标活动，适用本法。",
+      "section_path": "第二条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:2",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "列举必须进行招标的三类工程建设项目范围，包括基础设施、国有资金项目及国际贷款项目，并授权国务院制定具体范围和规模标准。",
+      "section_path": "第三条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:2",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "在中华人民共和国境内进行下列工程建设项目包括项目的勘察、设计、施工、监理以及与工程建设有关的重要设备、材料等的采购，必须进行招标：（一）大型基础设施、公用事业等关系社会公共利益、公众安全的项目；（二）全部或者部分使用国有资金投资或者国家融资的项目；（三）使用国际组织或者外国政府贷款、援助资金的项目。前款所列项目的具体范围和规模标准，由国务院发展计划部门会同国务院有关部门制订，报国务院批准。",
+      "section_path": "第三条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:3",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "禁止将依法必须招标的项目化整为零或以其他方式规避招标，确立强制招标的刚性约束。",
+      "section_path": "第四条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:3",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "任何单位和个人不得将依法必须进行招标的项目化整为零或者以其他任何方式规避招标。",
+      "section_path": "第四条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:4",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "确立招标投标活动应遵循的四大基本原则：公开、公平、公正和诚实信用。",
+      "section_path": "第五条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:4",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标投标活动应当遵循公开、公平、公正和诚实信用的原则。",
+      "section_path": "第五条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:5",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "保障招标投标活动的统一市场秩序，禁止地区或部门封锁，不得违法限制或排斥外地、外系统投标人。",
+      "section_path": "第六条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:5",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "依法必须进行招标的项目，其招标投标活动不受地区或者部门的限制。任何单位和个人不得违法限制或者排斥本地区、本系统以外的法人或者其他组织参加投标，不得以任何方式非法干涉招标投标活动。",
+      "section_path": "第六条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:6",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "确立招标投标活动接受依法监督的制度，明确行政监督部门职责及职权划分由国务院规定。",
+      "section_path": "第七条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:6",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标投标活动及其当事人应当接受依法实施的监督。有关行政监督部门依法对招标投标活动实施监督，依法查处招标投标活动中的违法行为。对招标投标活动的行政监督及有关部门的具体职权划分，由国务院规定。",
+      "section_path": "第七条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:7",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "定义招标人概念，即依法提出招标项目、进行招标的法人或其他组织。",
+      "section_path": "第八条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:7",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人是依照本法规定提出招标项目、进行招标的法人或者其他组织。",
+      "section_path": "第八条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:8",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定招标前置条件：需审批项目须先获批；招标人须落实相应资金或资金来源，并在招标文件中如实载明。",
+      "section_path": "第九条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:8",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标项目按照国家有关规定需要履行项目审批手续的，应当先履行审批手续，取得批准。招标人应当有进行招标项目的相应资金或者资金来源已经落实，并应当在招标文件中如实载明。",
+      "section_path": "第九条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:9",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "区分两种招标方式：公开招标（面向不特定对象）与邀请招标（面向特定对象），并分别定义其形式。",
+      "section_path": "第十条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:9",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标分为公开招标和邀请招标。公开招标，是指招标人以招标公告的方式邀请不特定的法人或者其他组织投标。邀请招标，是指招标人以投标邀请书的方式邀请特定的法人或者其他组织投标。",
+      "section_path": "第十条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:10",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定国家及地方重点项目确因不适宜公开招标的，经批准可采用邀请招标方式。",
+      "section_path": "第十一条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:10",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "国务院发展计划部门确定的国家重点项目和省、自治区、直辖市人民政府确定的地方重点项目不适宜公开招标的，经国务院发展计划部门或者省、自治区、直辖市人民政府批准，可以进行邀请招标。",
+      "section_path": "第十一条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:11",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "保障招标人自主选择招标代理机构的权利，禁止指定；具备能力的可自行招标，但依法必须招标项目须备案。",
+      "section_path": "第十二条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:11",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人有权自行选择招标代理机构，委托其办理招标事宜。任何单位和个人不得以任何方式为招标人指定招标代理机构。招标人具有编制招标文件和组织评标能力的，可以自行办理招标事宜。任何单位和个人不得强制其委托招标代理机构办理招标事宜。依法必须进行招标的项目，招标人自行办理招标事宜的，应当向有关行政监督部门备案。",
+      "section_path": "第十二条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:12",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "定义招标代理机构性质及法定设立条件：须依法设立、有营业场所与资金、具备专业力量。",
+      "section_path": "第十三条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:12",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标代理机构是依法设立、从事招标代理业务并提供相关服务的社会中介组织。招标代理机构应当具备下列条件：（一）有从事招标代理业务的营业场所和相应资金；（二）有能够编制招标文件和组织评标的相应专业力量。",
+      "section_path": "第十三条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:13",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "禁止招标代理机构与行政机关及其他国家机关存在隶属或利益关系，确保其中立性。",
+      "section_path": "第十四条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:13",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标代理机构与行政机关和其他国家机关不得存在隶属关系或者其他利益关系。",
+      "section_path": "第十四条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:14",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "明确招标代理机构须在委托范围内行事，并遵守本法关于招标人的规定。",
+      "section_path": "第十五条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:14",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标代理机构应当在招标人委托的范围内办理招标事宜，并遵守本法关于招标人的规定。",
+      "section_path": "第十五条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:15",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定公开招标须发布招标公告，依法必须招标项目的公告须通过国家指定媒介发布，并列明公告应载事项。",
+      "section_path": "第十六条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:15",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人采用公开招标方式的，应当发布招标公告。依法必须进行招标的项目的招标公告，应当通过国家指定的报刊、信息网络或者其他媒介发布。招标公告应当载明招标人的名称和地址、招标项目的性质、数量、实施地点和时间以及获取招标文件的办法等事项。",
+      "section_path": "第十六条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:16",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定邀请招标须向三个以上具备能力、资信良好的特定投标人发出投标邀请书，并载明法定事项。",
+      "section_path": "第十七条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:16",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人采用邀请招标方式的，应当向三个以上具备承担招标项目的能力、资信良好的特定的法人或者其他组织发出投标邀请书。投标邀请书应当载明本法第十六条第二款规定的事项。",
+      "section_path": "第十七条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:17",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "允许招标人对潜在投标人进行资格审查，但禁止设置不合理条件或实行歧视待遇。",
+      "section_path": "第十八条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:17",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人可以根据招标项目本身的要求，在招标公告或者投标邀请书中，要求潜在投标人提供有关资质证明文件和业绩情况，并对潜在投标人进行资格审查；国家对投标人的资格条件有规定的，依照其规定。招标人不得以不合理的条件限制或者排斥潜在投标人，不得对潜在投标人实行歧视待遇。",
+      "section_path": "第十八条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:18",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定招标文件编制要求：须包含技术要求、资格审查标准、报价与评标标准、合同主要条款等实质性内容。",
+      "section_path": "第十九条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:18",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人应当根据招标项目的特点和需要编制招标文件。招标文件应当包括招标项目的技术要求、对投标人资格审查的标准、投标报价要求和评标标准等所有实质性要求和条件以及拟签订合同的主要条款。国家对招标项目的技术、标准有规定的，招标人应当按照其规定在招标文件中提出相应要求。招标项目需要划分标段、确定工期的，招标人应当合理划分标段、确定工期，并在招标文件中载明。",
+      "section_path": "第十九条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:19",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "禁止招标文件含有倾向性或排斥性内容，尤其不得要求或标明特定生产供应者。",
+      "section_path": "第二十条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:19",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标文件不得要求或者标明特定的生产供应者以及含有倾向或者排斥潜在投标人的其他内容。",
+      "section_path": "第二十条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:20",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "允许招标人根据项目具体情况组织潜在投标人踏勘现场，增强信息对称。",
+      "section_path": "第二十一条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:20",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人根据招标项目的具体情况，可以组织潜在投标人踏勘项目现场。",
+      "section_path": "第二十一条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:21",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "严格保密义务：禁止透露潜在投标人信息及标底，确保招标公平竞争。",
+      "section_path": "第二十二条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:21",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人不得向他人透露已获取招标文件的潜在投标人的名称、数量以及可能影响公平竞争的有关招标投标的其他情况。招标人设有标底的，标底必须保密。",
+      "section_path": "第二十二条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:22",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定招标文件澄清或修改须在截标日前至少十五日以书面形式通知所有收受人，且构成文件组成部分。",
+      "section_path": "第二十三条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:22",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人对已发出的招标文件进行必要的澄清或者修改的，应当在招标文件要求提交投标文件截止时间至少十五日前，以书面形式通知所有招标文件收受人。该澄清或者修改的内容为招标文件的组成部分。",
+      "section_path": "第二十三条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:23",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定投标人编制投标文件的合理时间，依法必须招标项目自发标起至截标止最短不少于二十日。",
+      "section_path": "第二十四条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:23",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人应当确定投标人编制投标文件所需要的合理时间；但是，依法必须进行招标的项目，自招标文件开始发出之日起至投标人提交投标文件截止之日止，最短不得少于二十日。",
+      "section_path": "第二十四条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:24",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "定义投标人概念，并明确科研项目允许个人参与投标时适用本法相关规定。",
+      "section_path": "第二十五条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:24",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人是响应招标、参加投标竞争的法人或者其他组织。依法招标的科研项目允许个人参加投标的，投标的个人适用本法有关投标人的规定。",
+      "section_path": "第二十五条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:25",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定投标人须具备承担招标项目的能力，且须符合国家或招标文件设定的资格条件。",
+      "section_path": "第二十六条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:25",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人应当具备承担招标项目的能力；国家有关规定对投标人资格条件或者招标文件对投标人资格条件有规定的，投标人应当具备规定的资格条件。",
+      "section_path": "第二十六条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:26",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "要求投标文件须响应招标文件实质性要求；建设施工项目须载明项目负责人、技术人员简历业绩及机械设备等内容。",
+      "section_path": "第二十七条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:26",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人应当按照招标文件的要求编制投标文件。投标文件应当对招标文件提出的实质性要求和条件作出响应。招标项目属于建设施工的，投标文件的内容应当包括拟派出的项目负责人与主要技术人员的简历、业绩和拟用于完成招标项目的机械设备等。",
+      "section_path": "第二十七条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:27",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定投标文件须在截标前送达，招标人须签收保存不得开启；投标人少于三个须重新招标；逾期送达拒收。",
+      "section_path": "第二十八条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:27",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人应当在招标文件要求提交投标文件的截止时间前，将投标文件送达投标地点。招标人收到投标文件后，应当签收保存，不得开启。投标人少于三个的，招标人应当依照本法重新招标。在招标文件要求提交投标文件的截止时间后送达的投标文件，招标人应当拒收。",
+      "section_path": "第二十八条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:28",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "允许投标人在截标前补充、修改或撤回投标文件，并书面通知招标人；补充修改内容为投标文件组成部分。",
+      "section_path": "第二十九条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:28",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人在招标文件要求提交投标文件的截止时间前，可以补充、修改或者撤回已提交的投标文件，并书面通知招标人。补充、修改的内容为投标文件的组成部分。",
+      "section_path": "第二十九条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:29",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "允许中标人将非主体、非关键性工作分包，但须在投标文件中载明。",
+      "section_path": "第三十条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:29",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人根据招标文件载明的项目实际情况，拟在中标后将中标项目的部分非主体、非关键性工作进行分包的，应当在投标文件中载明。",
+      "section_path": "第三十条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:30",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定联合体投标规则：各方须具备相应能力，按低资质确定等级，须签共同协议并连同投标文件提交，中标后承担连带责任。",
+      "section_path": "第三十一条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:30",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "两个以上法人或者其他组织可以组成一个联合体，以一个投标人的身份共同投标。联合体各方均应当具备承担招标项目的相应能力；国家有关规定或者招标文件对投标人资格条件有规定的，联合体各方均应当具备规定的相应资格条件。由同一专业的单位组成的联合体，按照资质等级较低的单位确定资质等级。联合体各方应当签订共同投标协议，明确约定各方拟承担的工作和责任，并将共同投标协议连同投标文件一并提交招标人。联合体中标的，联合体各方应当共同与招标人签订合同，就中标项目向招标人承担连带责任。招标人不得强制投标人组成联合体共同投标，不得限制投标人之间的竞争。",
+      "section_path": "第三十一条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:31",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "禁止投标人相互串通投标报价、与招标人串通投标，以及行贿谋取中标等损害公平竞争的行为。",
+      "section_path": "第三十二条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:31",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人不得相互串通投标报价，不得排挤其他投标人的公平竞争，损害招标人或者其他投标人的合法权益。投标人不得与招标人串通投标，损害国家利益、社会公共利益或者他人的合法权益。禁止投标人以向招标人或者评标委员会成员行贿的手段谋取中标。",
+      "section_path": "第三十二条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:32",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "禁止以低于成本报价竞标、以他人名义投标或弄虚作假骗取中标。",
+      "section_path": "第三十三条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:32",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人不得以低于成本的报价竞标，也不得以他人名义投标或者以其他方式弄虚作假，骗取中标。",
+      "section_path": "第三十三条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:33",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定开标须在截标同一时间、同一地点公开进行，确保程序透明。",
+      "section_path": "第三十四条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:33",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "开标应当在招标文件确定的提交投标文件截止时间的同一时间公开进行；开标地点应当为招标文件中预先确定的地点。",
+      "section_path": "第三十四条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:34",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "明确开标由招标人主持，须邀请所有投标人参加，保障程序参与权。",
+      "section_path": "第三十五条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:34",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "开标由招标人主持，邀请所有投标人参加。",
+      "section_path": "第三十五条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:35",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定开标程序：检查密封→拆封→宣读（投标人名称、报价等）→全程记录存档。",
+      "section_path": "第三十六条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:35",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "开标时，由投标人或者其推选的代表检查投标文件的密封情况，也可以由招标人委托的公证机构检查并公证；经确认无误后，由工作人员当众拆封，宣读投标人名称、投标价格和投标文件的其他主要内容。招标人在招标文件要求提交投标文件的截止时间前收到的所有投标文件，开标时都应当当众予以拆封、宣读。开标过程应当记录，并存档备查。",
+      "section_path": "第三十六条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:36",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定评标由依法组建的评标委员会负责；依法必须招标项目委员会须五人以上单数，专家不少于三分之二，且须满足从业年限与职称要求。",
+      "section_path": "第三十七条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:36",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "评标由招标人依法组建的评标委员会负责。依法必须进行招标的项目，其评标委员会由招标人的代表和有关技术、经济等方面的专家组成，成员人数为五人以上单数，其中技术、经济等方面的专家不得少于成员总数的三分之二。前款专家应当从事相关领域工作满八年并具有高级职称或者具有同等专业水平，由招标人从国务院有关部门或者省、自治区、直辖市人民政府有关部门提供的专家名册或者招标代理机构的专家库内的相关专业的专家名单中确定；一般招标项目可以采取随机抽取方式，特殊招标项目可以由招标人直接确定。与投标人有利害关系的人不得进入相关项目的评标委员会；已经进入的应当更换。评标委员会成员的名单在中标结果确定前应当保密。",
+      "section_path": "第三十七条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:37",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "强调评标须严格保密，禁止任何单位和个人非法干预评标过程和结果。",
+      "section_path": "第三十八条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:37",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人应当采取必要的措施，保证评标在严格保密的情况下进行。任何单位和个人不得非法干预、影响评标的过程和结果。",
+      "section_path": "第三十八条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:38",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "允许评标委员会要求投标人对含义不明内容作澄清说明，但不得超出投标文件范围或改变实质性内容。",
+      "section_path": "第三十九条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:38",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "评标委员会可以要求投标人对投标文件中含义不明确的内容作必要的澄清或者说明，但是澄清或者说明不得超出投标文件的范围或者改变投标文件的实质性内容。",
+      "section_path": "第三十九条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:39",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定评标须依招标文件标准方法评审比较，参考标底；评委会须提交书面报告并推荐中标候选人；招标人据此确定中标人或授权评委会直接确定。",
+      "section_path": "第四十条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:39",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "评标委员会应当按照招标文件确定的评标标准和方法，对投标文件进行评审和比较；设有标底的，应当参考标底。评标委员会完成评标后，应当向招标人提出书面评标报告，并推荐合格的中标候选人。招标人根据评标委员会提出的书面评标报告和推荐的中标候选人确定中标人。招标人也可以授权评标委员会直接确定中标人。国务院对特定招标项目的评标有特别规定的，从其规定。",
+      "section_path": "第四十条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:40",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "明确中标人须满足两项条件之一：最大限度满足综合评价标准，或满足实质性要求且评审价最低（但不得低于成本）。",
+      "section_path": "第四十一条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:40",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "中标人的投标应当符合下列条件之一：（一）能够最大限度地满足招标文件中规定的各项综合评价标准；（二）能够满足招标文件的实质性要求，并且经评审的投标价格最低；但是投标价格低于成本的除外。",
+      "section_path": "第四十一条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:41",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "赋予评标委员会否决全部投标的权力；依法必须招标项目所有投标被否决的，须重新招标。",
+      "section_path": "第四十二条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:41",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "评标委员会经评审，认为所有投标都不符合招标文件要求的，可以否决所有投标。依法必须进行招标的项目的所有投标被否决的，招标人应当依照本法重新招标。",
+      "section_path": "第四十二条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:42",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "禁止招标人在确定中标人前与投标人就投标价格、方案等实质性内容进行谈判。",
+      "section_path": "第四十三条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:42",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "在确定中标人前，招标人不得与投标人就投标价格、投标方案等实质性内容进行谈判。",
+      "section_path": "第四十三条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:43",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定评标委员会成员须客观公正履职、遵守职业道德、承担个人责任；禁止私下接触、收受财物及泄露评标信息。",
+      "section_path": "第四十四条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:43",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "评标委员会成员应当客观、公正地履行职务，遵守职业道德，对所提出的评审意见承担个人责任。评标委员会成员不得私下接触投标人，不得收受投标人的财物或者其他好处。评标委员会成员和参与评标的有关工作人员不得透露对投标文件的评审和比较、中标候选人的推荐情况以及与评标有关的其他情况。",
+      "section_path": "第四十四条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:44",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定中标通知书须同时通知中标人与未中标人；通知书具有法律效力，擅自变更须承担法律责任。",
+      "section_path": "第四十五条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:44",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "中标人确定后，招标人应当向中标人发出中标通知书，并同时将中标结果通知所有未中标的投标人。中标通知书对招标人和中标人具有法律效力。中标通知书发出后，招标人改变中标结果的，或者中标人放弃中标项目的，应当依法承担法律责任。",
+      "section_path": "第四十五条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:45",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定招标人与中标人须在三十日内订立书面合同，不得背离合同实质性内容；中标人须按要求提交履约保证金。",
+      "section_path": "第四十六条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:45",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人和中标人应当自中标通知书发出之日起三十日内，按照招标文件和中标人的投标文件订立书面合同。招标人和中标人不得再行订立背离合同实质性内容的其他协议。招标文件要求中标人提交履约保证金的，中标人应当提交。",
+      "section_path": "第四十六条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:46",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定依法必须招标项目，招标人须在确定中标人后十五日内向行政监督部门提交招标投标情况书面报告。",
+      "section_path": "第四十七条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:46",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "依法必须进行招标的项目，招标人应当自确定中标人之日起十五日内，向有关行政监督部门提交招标投标情况的书面报告。",
+      "section_path": "第四十七条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:47",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定中标人须按约履行义务，不得转让或肢解转让中标项目；允许分包非主体非关键工作，但接受分包人不得再分包，且须承担连带责任。",
+      "section_path": "第四十八条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:47",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "中标人应当按照合同约定履行义务，完成中标项目。中标人不得向他人转让中标项目，也不得将中标项目肢解后分别向他人转让。中标人按照合同约定或者经招标人同意，可以将中标项目的部分非主体、非关键性工作分包给他人完成。接受分包的人应当具备相应的资格条件，并不得再次分包。中标人应当就分包项目向招标人负责，接受分包的人就分包项目承担连带责任。",
+      "section_path": "第四十八条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:48",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对必须招标而不招标、化整为零规避招标等行为，处以罚款、暂停执行/拨付、处分等处罚。",
+      "section_path": "第四十九条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:48",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "违反本法规定，必须进行招标的项目而不招标的，将必须进行招标的项目化整为零或者以其他任何方式规避招标的，责令限期改正，可以处项目合同金额千分之五以上千分之十以下的罚款；对全部或者部分使用国有资金的项目，可以暂停项目执行或者暂停资金拨付；对单位直接负责的主管人员和其他直接责任人员依法给予处分。",
+      "section_path": "第四十九条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:49",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对招标代理机构泄露保密信息或与招标人、投标人串通损害利益的，处以罚款、没收违法所得、暂停代理资格直至吊销执照。",
+      "section_path": "第五十条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:49",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标代理机构违反本法规定，泄露应当保密的与招标投标活动有关的情况和资料的，或者与招标人、投标人串通损害国家利益、社会公共利益或者他人合法权益的，处五万元以上二十五万元以下的罚款；对单位直接负责的主管人员和其他直接责任人员处单位罚款数额百分之五以上百分之十以下的罚款；有违法所得的，并处没收违法所得；情节严重的，禁止其一年至二年内代理依法必须进行招标的项目并予以公告，直至由工商行政管理机关吊销营业执照；构成犯罪的，依法追究刑事责任。给他人造成损失的，依法承担赔偿责任。前款所列行为影响中标结果的，中标无效。",
+      "section_path": "第五十条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:50",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对招标人不合理限制排斥潜在投标人、歧视待遇、强制联合体或限制竞争的，责令改正并可处罚款。",
+      "section_path": "第五十一条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:50",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人以不合理的条件限制或者排斥潜在投标人的，对潜在投标人实行歧视待遇的，强制要求投标人组成联合体共同投标的，或者限制投标人之间竞争的，责令改正，可以处一万元以上五万元以下的罚款。",
+      "section_path": "第五十一条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:51",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对依法必须招标项目招标人泄露潜在投标人信息或标底的，给予警告并可处罚款；构成犯罪的追究刑责；影响中标结果的，中标无效。",
+      "section_path": "第五十二条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:51",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "依法必须进行招标的项目的招标人向他人透露已获取招标文件的潜在投标人的名称、数量或者可能影响公平竞争的有关招标投标的其他情况的，或者泄露标底的，给予警告，可以并处一万元以上十万元以下的罚款；对单位直接负责的主管人员和其他直接责任人员依法给予处分；构成犯罪的，依法追究刑事责任。前款所列行为影响中标结果的，中标无效。",
+      "section_path": "第五十二条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:52",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对投标人串通投标、与招标人串通或行贿谋取中标的，处以罚款、没收违法所得、取消投标资格直至吊销执照；中标无效；构成犯罪的追究刑责。",
+      "section_path": "第五十三条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:52",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人相互串通投标或者与招标人串通投标的，投标人以向招标人或者评标委员会成员行贿的手段谋取中标的，中标无效，处中标项目金额千分之五以上千分之十以下的罚款，对单位直接负责的主管人员和其他直接责任人员处单位罚款数额百分之五以上百分之十以下的罚款；有违法所得的，并处没收违法所得；情节严重的，取消其一年至二年内参加依法必须进行招标的项目的投标资格并予以公告，直至由工商行政管理机关吊销营业执照；构成犯罪的，依法追究刑事责任。给他人造成损失的，依法承担赔偿责任。",
+      "section_path": "第五十三条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:53",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对投标人以他人名义投标或弄虚作假骗取中标的，中标无效；造成损失须赔偿；尚未犯罪的处以罚款、取消资格等。",
+      "section_path": "第五十四条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:53",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人以他人名义投标或者以其他方式弄虚作假，骗取中标的，中标无效，给招标人造成损失的，依法承担赔偿责任；构成犯罪的，依法追究刑事责任。依法必须进行招标的项目的投标人有前款所列行为尚未构成犯罪的，处中标项目金额千分之五以上千分之十以下的罚款，对单位直接负责的主管人员和其他直接责任人员处单位罚款数额百分之五以上百分之十以下的罚款；有违法所得的，并处没收违法所得；情节严重的，取消其一年至三年内参加依法必须进行招标的项目的投标资格并予以公告，直至由工商行政管理机关吊销营业执照。",
+      "section_path": "第五十四条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:54",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对依法必须招标项目招标人违规与投标人就实质性内容谈判的，给予警告并处分；影响中标结果的，中标无效。",
+      "section_path": "第五十五条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:54",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "依法必须进行招标的项目，招标人违反本法规定，与投标人就投标价格、投标方案等实质性内容进行谈判的，给予警告，对单位直接负责的主管人员和其他直接责任人员依法给予处分。前款所列行为影响中标结果的，中标无效。",
+      "section_path": "第五十五条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:55",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对评标委员会成员收受财物或泄露评标信息的，给予警告、没收财物、罚款；取消评标资格；构成犯罪的追究刑责。",
+      "section_path": "第五十六条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:55",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "评标委员会成员收受投标人的财物或者其他好处的，评标委员会成员或者参加评标的有关工作人员向他人透露对投标文件的评审和比较、中标候选人的推荐以及与评标有关的其他情况的，给予警告，没收收受的财物，可以并处三千元以上五万元以下的罚款，对有所列违法行为的评标委员会成员取消担任评标委员会成员的资格，不得再参加任何依法必须进行招标的项目的评标；构成犯罪的，依法追究刑事责任。",
+      "section_path": "第五十六条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:56",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对招标人在推荐中标候选人外确定中标人，或所有投标被否决后自行确定中标的，认定中标无效并处罚款、处分。",
+      "section_path": "第五十七条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:56",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人在评标委员会依法推荐的中标候选人以外确定中标人的，依法必须进行招标的项目在所有投标被评标委员会否决后自行确定中标人的，中标无效，责令改正，可以处中标项目金额千分之五以上千分之十以下的罚款；对单位直接负责的主管人员和其他直接责任人员依法给予处分。",
+      "section_path": "第五十七条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:57",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对中标人违法转让、肢解转让、违法分包或分包人再分包的，认定转让分包无效，并处罚款、没收违法所得、停业整顿或吊销执照。",
+      "section_path": "第五十八条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:57",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "中标人将中标项目转让给他人的，将中标项目肢解后分别转让给他人的，违反本法规定将中标项目的部分主体、关键性工作分包给他人的，或者分包人再次分包的，转让、分包无效，处转让、分包项目金额千分之五以上千分之十以下的罚款；有违法所得的，并处没收违法所得；可以责令停业整顿；情节严重的，由工商行政管理机关吊销营业执照。",
+      "section_path": "第五十八条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:58",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对招标人与中标人不按招标文件和投标文件订立合同，或订立背离合同实质性内容协议的，责令改正并可处罚款。",
+      "section_path": "第五十九条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:58",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "招标人与中标人不按照招标文件和中标人的投标文件订立合同的，或者招标人、中标人订立背离合同实质性内容的协议的，责令改正；可以处中标项目金额千分之五以上千分之十以下的罚款。",
+      "section_path": "第五十九条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:59",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对中标人不履行合同的，不予退还履约保证金并赔偿损失；情节严重的取消投标资格；不可抗力除外。",
+      "section_path": "第六十条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:59",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "中标人不履行与招标人订立的合同的，履约保证金不予退还，给招标人造成的损失超过履约保证金数额的，还应当对超过部分予以赔偿；没有提交履约保证金的，应当对招标人的损失承担赔偿责任。中标人不按照与招标人订立的合同履行义务，情节严重的，取消其二年至五年内参加依法必须进行招标的项目的投标资格并予以公告，直至由工商行政管理机关吊销营业执照。因不可抗力不能履行合同的，不适用前两款规定。",
+      "section_path": "第六十条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:60",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "明确本章行政处罚由国务院规定的行政监督部门决定，本法另有规定的除外。",
+      "section_path": "第六十一条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:60",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "本章规定的行政处罚，由国务院规定的有关行政监督部门决定。本法已对实施行政处罚的机关作出规定的除外。",
+      "section_path": "第六十一条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:61",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对单位限制排斥外地投标人、指定代理机构、强制委托或干涉招标活动的，责令改正并给予相关人员处分。",
+      "section_path": "第六十二条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:61",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "任何单位违反本法规定，限制或者排斥本地区、本系统以外的法人或者其他组织参加投标的，为招标人指定招标代理机构的，强制招标人委托招标代理机构办理招标事宜的，或者以其他方式干涉招标投标活动的，责令改正；对单位直接负责的主管人员和其他直接责任人员依法给予警告、记过、记大过的处分，情节较重的，依法给予降级、撤职、开除的处分。个人利用职权进行前款违法行为的，依照前款规定追究责任。",
+      "section_path": "第六十二条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:62",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对负有监督职责的国家机关工作人员徇私舞弊、滥用职权或玩忽职守的，构成犯罪的追究刑责，否则给予行政处分。",
+      "section_path": "第六十三条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:62",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "对招标投标活动依法负有行政监督职责的国家机关工作人员徇私舞弊、滥用职权或者玩忽职守，构成犯罪的，依法追究刑事责任；不构成犯罪的，依法给予行政处分。",
+      "section_path": "第六十三条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:63",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定依法必须招标项目中标无效的，应依本法条件重新确定中标人或重新招标。",
+      "section_path": "第六十四条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:63",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "依法必须进行招标的项目违反本法规定，中标无效的，应当依照本法规定的中标条件从其余投标人中重新确定中标人或者依照本法重新进行招标。",
+      "section_path": "第六十四条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:64",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "赋予投标人及其他利害关系人对违法招标投标活动提出异议或向行政监督部门投诉的权利。",
+      "section_path": "第六十五条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:64",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "投标人和其他利害关系人认为招标投标活动不符合本法有关规定的，有权向招标人提出异议或者依法向有关行政监督部门投诉。",
+      "section_path": "第六十五条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:65",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定涉及国家安全、国家秘密、抢险救灾、扶贫以工代赈等特殊情况的项目，可依国家规定不进行招标。",
+      "section_path": "第六十六条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:65",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "涉及国家安全、国家秘密、抢险救灾或者属于利用扶贫资金实行以工代赈、需要使用农民工等特殊情况，不适宜进行招标的项目，按照国家有关规定可以不进行招标。",
+      "section_path": "第六十六条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:66",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "规定使用国际组织或外国政府贷款、援助资金的项目，可适用其招标条件和程序规定，但不得违背我国社会公共利益。",
+      "section_path": "第六十七条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:66",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "使用国际组织或者外国政府贷款、援助资金的项目进行招标，贷款方、资金提供方对招标投标的具体条件和程序有不同规定的，可以适用其规定，但违背中华人民共和国的社会公共利益的除外。",
+      "section_path": "第六十七条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para:67",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "明确本法施行日期为2000年1月1日。",
+      "section_path": "第六十八条",
+      "metadata": {
+        "level": "paragraph"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:structure:para_body:67",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "structure",
+      "content": "本法自2000 年 1 月 1 日起施行。",
+      "section_path": "第六十八条/正文",
+      "metadata": {
+        "level": "paragraph_body"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:0",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "必须进行招标的三类工程建设项目：（一）大型基础设施、公用事业等关系社会公共利益、公众安全的项目；（二）全部或者部分使用国有资金投资或者国家融资的项目；（三）使用国际组织或者外国政府贷款、援助资金的项目。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "强制招标范围",
+          "法定招标情形",
+          "项目类型"
+        ],
+        "keywords": "强制招标范围 法定招标情形 项目类型"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:1",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "依法必须进行招标的项目，其具体范围和规模标准由国务院发展计划部门会同国务院有关部门制订，报国务院批准。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "授权立法",
+          "标准制定主体",
+          "国务院权限"
+        ],
+        "keywords": "授权立法 标准制定主体 国务院权限"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:2",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "禁止规避招标：任何单位和个人不得将依法必须进行招标的项目化整为零或者以其他任何方式规避招标。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "规避招标禁止",
+          "法律责任前提",
+          "程序合法性"
+        ],
+        "keywords": "规避招标禁止 法律责任前提 程序合法性"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:3",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "招标投标活动应遵循公开、公平、公正和诚实信用四大基本原则。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "基本原则",
+          "法律原则",
+          "招投标核心价值"
+        ],
+        "keywords": "基本原则 法律原则 招投标核心价值"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:4",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "依法必须进行招标的项目，招标投标活动不受地区或部门限制；不得违法限制或排斥外地、外系统法人或其他组织参加投标。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "市场统一性",
+          "地方保护禁止",
+          "公平竞争保障"
+        ],
+        "keywords": "市场统一性 地方保护禁止 公平竞争保障"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:5",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "招标分为公开招标和邀请招标；邀请招标仅适用于国务院发展计划部门确定的国家重点项目或省级地方政府确定的地方重点项目，且须经批准并证明不适宜公开招标。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "招标方式",
+          "邀请招标适用条件",
+          "审批前置"
+        ],
+        "keywords": "招标方式 邀请招标适用条件 审批前置"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:6",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "招标人有权自行选择招标代理机构；具备编制招标文件和组织评标能力的，可自行办理招标事宜；自行招标的依法必须招标项目须向行政监督部门备案。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "招标人自主权",
+          "自行招标条件",
+          "备案义务"
+        ],
+        "keywords": "招标人自主权 自行招标条件 备案义务"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:7",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "招标代理机构须依法设立，具备营业场所、相应资金及编制招标文件和组织评标的专业力量；不得与行政机关和其他国家机关存在隶属或利益关系。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "代理机构资质",
+          "独立性要求",
+          "利益回避"
+        ],
+        "keywords": "代理机构资质 独立性要求 利益回避"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:8",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "依法必须进行招标的项目，招标公告须通过国家指定的报刊、信息网络或其他媒介发布。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "公告发布渠道",
+          "法定媒介",
+          "公开招标程序要件"
+        ],
+        "keywords": "公告发布渠道 法定媒介 公开招标程序要件"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:9",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "邀请招标须向三个以上具备承担能力、资信良好的特定法人或其他组织发出投标邀请书。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "邀请招标对象数量",
+          "资格门槛",
+          "特定性要求"
+        ],
+        "keywords": "邀请招标对象数量 资格门槛 特定性要求"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:10",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "招标人不得以不合理条件限制或排斥潜在投标人，不得实行歧视待遇；不得要求或标明特定生产供应者，不得含倾向性或排斥性内容。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "公平竞争保障",
+          "歧视禁止",
+          "招标文件中立性"
+        ],
+        "keywords": "公平竞争保障 歧视禁止 招标文件中立性"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:11",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "招标文件应当包括技术要求、资格审查标准、报价与评标标准等所有实质性要求和条件，以及拟签合同主要条款；需划分标段、确定工期的应合理并在文件中载明。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "招标文件必备内容",
+          "实质性要求",
+          "标段与工期规范"
+        ],
+        "keywords": "招标文件必备内容 实质性要求 标段与工期规范"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:12",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "依法必须进行招标的项目，自招标文件开始发出之日起至提交截止之日止，最短不得少于二十日。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "投标时限下限",
+          "法定期限",
+          "程序正当性"
+        ],
+        "keywords": "投标时限下限 法定期限 程序正当性"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:13",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "投标人少于三个的，招标人应当重新招标。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "开标前提条件",
+          "有效投标人数量",
+          "重新招标触发"
+        ],
+        "keywords": "开标前提条件 有效投标人数量 重新招标触发"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:14",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "联合体投标要求：各方均须具备相应能力及资格条件；同一专业联合体按资质等级较低者认定；须签订共同投标协议并连同投标文件提交；中标后须共同签约并承担连带责任；招标人不得强制联合体投标。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "联合体规则",
+          "资质认定标准",
+          "连带责任",
+          "强制联合体禁止"
+        ],
+        "keywords": "联合体规则 资质认定标准 连带责任 强制联合体禁止"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:15",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "禁止串通投标：投标人之间、投标人与招标人之间不得串通投标报价或谋取中标；禁止行贿手段谋取中标。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "串通投标",
+          "围标串标",
+          "商业贿赂禁止"
+        ],
+        "keywords": "串通投标 围标串标 商业贿赂禁止"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:16",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "投标人不得以低于成本的报价竞标，不得以他人名义投标或弄虚作假骗取中标。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "低价竞标禁止",
+          "挂靠投标禁止",
+          "虚假陈述禁止"
+        ],
+        "keywords": "低价竞标禁止 挂靠投标禁止 虚假陈述禁止"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:17",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "评标委员会组成：依法必须招标项目，成员为5人以上单数，其中技术经济专家不少于2/3；专家须从事相关领域满八年且具高级职称或同等水平；专家从国务院或省级部门专家名册/招标代理机构专家库中随机抽取（特殊项目可直接确定）；与投标人有利害关系者须回避；名单在中标前保密。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "评委会构成",
+          "专家资格",
+          "回避制度",
+          "名单保密"
+        ],
+        "keywords": "评委会构成 专家资格 回避制度 名单保密"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:18",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "中标人的投标须满足以下条件之一：（一）最大限度满足综合评价标准；（二）满足实质性要求且经评审价格最低（但不得低于成本）。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "中标条件",
+          "综合评估法",
+          "经评审最低价法",
+          "成本价红线"
+        ],
+        "keywords": "中标条件 综合评估法 经评审最低价法 成本价红线"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:19",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "所有投标被否决的，依法必须招标项目应当重新招标。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "否决全部投标后果",
+          "重新招标义务",
+          "程序救济"
+        ],
+        "keywords": "否决全部投标后果 重新招标义务 程序救济"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:20",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "确定中标人前，招标人不得与投标人就投标价格、投标方案等实质性内容进行谈判。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "谈判禁止",
+          "实质性内容隔离",
+          "程序公正保障"
+        ],
+        "keywords": "谈判禁止 实质性内容隔离 程序公正保障"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:21",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "中标通知书发出后，对招标人和中标人具有法律效力；改变中标结果或放弃中标应依法承担法律责任。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "中标通知书效力",
+          "要约承诺完成",
+          "违约责任触发"
+        ],
+        "keywords": "中标通知书效力 要约承诺完成 违约责任触发"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:22",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "招标人和中标人应在中标通知书发出之日起30日内订立书面合同；不得再行订立背离合同实质性内容的其他协议。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "签约期限",
+          "合同实质性内容锁定",
+          "阴阳合同禁止"
+        ],
+        "keywords": "签约期限 合同实质性内容锁定 阴阳合同禁止"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:23",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "依法必须进行招标的项目，招标人应在确定中标人之日起15日内向行政监督部门提交招标投标情况书面报告。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "事后报告义务",
+          "行政监督衔接",
+          "法定时限"
+        ],
+        "keywords": "事后报告义务 行政监督衔接 法定时限"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:24",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "中标人不得转让中标项目，不得肢解分包；可将非主体、非关键性工作分包（须在投标文件中载明），接受分包人不得再次分包；中标人就分包项目向招标人负责，分包人承担连带责任。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "分包规则",
+          "主体关键性限定",
+          "连带责任",
+          "再分包禁止"
+        ],
+        "keywords": "分包规则 主体关键性限定 连带责任 再分包禁止"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:25",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "规避招标、违法限制排斥投标人、泄露潜在投标人信息或标底、串通投标、行贿、以他人名义投标、弄虚作假、违法谈判、擅自确定中标人、违法分包等行为，将导致中标无效，并处项目金额千分之五至千分之十罚款，情节严重者取消投标资格、吊销执照等。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "中标无效情形",
+          "行政处罚梯度",
+          "资格罚与财产罚"
+        ],
+        "keywords": "中标无效情形 行政处罚梯度 资格罚与财产罚"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:26",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "涉及国家安全、国家秘密、抢险救灾、扶贫以工代赈使用农民工等特殊情况，按国家规定可以不招标。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "例外豁免情形",
+          "不招标法定事由",
+          "公共利益优先"
+        ],
+        "keywords": "例外豁免情形 不招标法定事由 公共利益优先"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:kp:27",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "knowledge_point",
+      "content": "使用国际组织或外国政府贷款、援助资金的项目，可适用贷款方/资金提供方规定，但不得违背中华人民共和国社会公共利益。",
+      "section_path": "",
+      "metadata": {
+        "tags": [
+          "涉外招标规则",
+          "国际惯例适用条件",
+          "公共利益保留"
+        ],
+        "keywords": "涉外招标规则 国际惯例适用条件 公共利益保留"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:0",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 委托 招标代理机构",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n3",
+        "relation": "委托"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:1",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 代理 招标代理机构",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n3",
+        "relation": "代理"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:2",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 组建 评标委员会",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n4",
+        "relation": "组建"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:3",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 监督 行政监督部门",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n5",
+        "relation": "监督"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:4",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 发出 招标文件",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n13",
+        "relation": "发出"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:5",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 澄清修改 招标文件",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n13",
+        "relation": "澄清修改"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:6",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 提交 投标文件",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n14",
+        "relation": "提交"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:7",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 发出 中标通知书",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n15",
+        "relation": "发出"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:8",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 签订 合同",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n19",
+        "relation": "签订"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:9",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 RELATED_TO 履约保证金",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n16",
+        "relation": "RELATED_TO"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:10",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "投标人 提交 投标文件",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n2",
+        "target": "n14",
+        "relation": "提交"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:11",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "投标人 参与 工程建设项目",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n2",
+        "target": "n11",
+        "relation": "参与"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:12",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标代理机构 RELATED_TO 招标文件",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n3",
+        "target": "n13",
+        "relation": "RELATED_TO"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:13",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "评标委员会 评审 投标文件",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n4",
+        "target": "n14",
+        "relation": "评审"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:14",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "评标委员会 推荐 中标人",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n4",
+        "target": "n7",
+        "relation": "推荐"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:15",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "评标委员会 确定 中标人",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n4",
+        "target": "n7",
+        "relation": "确定"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:16",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "评标委员会 否决 投标文件",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n4",
+        "target": "n14",
+        "relation": "否决"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:17",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "联合体 参与 投标人",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n6",
+        "target": "n2",
+        "relation": "参与"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:18",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "联合体 签订 合同",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n6",
+        "target": "n19",
+        "relation": "签订"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:19",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "联合体 承担连带责任 合同",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n6",
+        "target": "n19",
+        "relation": "承担连带责任"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:20",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "投标人 签订 合同",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n2",
+        "target": "n19",
+        "relation": "签订"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:21",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "投标人 分包 工程建设项目",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n2",
+        "target": "n11",
+        "relation": "分包"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:22",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "投标人 提交 投标文件",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n2",
+        "target": "n14",
+        "relation": "提交"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:23",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "投标人 串通 违法行为",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n2",
+        "target": "n17",
+        "relation": "串通"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:24",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "投标人 规避 违法行为",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n2",
+        "target": "n17",
+        "relation": "规避"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:25",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "投标人 泄露 违法行为",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n2",
+        "target": "n17",
+        "relation": "泄露"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:26",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 规避 违法行为",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n17",
+        "relation": "规避"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:27",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 泄露 违法行为",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n17",
+        "relation": "泄露"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:28",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 串通 违法行为",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n17",
+        "relation": "串通"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    },
+    {
+      "id": "a1a493e1-f521-49b0-8e96-4408855832fe:f72a0e5a-7389-4565-9b26-a108515d9de9:triple:29",
+      "collection_id": "a1a493e1-f521-49b0-8e96-4408855832fe",
+      "document_id": "f72a0e5a-7389-4565-9b26-a108515d9de9",
+      "document_name": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+      "layer": "graph_triple",
+      "content": "招标人 资格审查 违法行为",
+      "section_path": "图谱路径",
+      "metadata": {
+        "source": "n1",
+        "target": "n17",
+        "relation": "资格审查"
+      },
+      "updated_at": "2026-04-01T16:29:46.514501"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ from pathlib import Path
 from fastapi import APIRouter, UploadFile, File, HTTPException
 
 from app.core.settings import settings
-from app.models.schemas import CollectionCreate, CollectionResponse, DocumentInfo
+from app.models.schemas import CollectionCreate, CollectionResponse, DocumentInfo, CollectionCrawlRequest
 from app.services.collection_store import (
     create_collection,
     list_collections,
@@ -18,12 +18,26 @@ from app.services.collection_store import (
 from app.services.document_loader import load_document
 from app.services.chunker import chunk_text
 from app.services.vector_store import VectorStore
+from app.services.web_crawler import fetch_and_extract_markdown, suggest_markdown_filename
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
 # python-docx 仅支持 .docx，不支持旧版 .doc 二进制格式
 ALLOWED_EXTENSIONS = {".pdf", ".docx", ".md", ".markdown"}
+
+
+def _dedupe_filename(existing: set[str], filename: str) -> str:
+    if filename not in existing:
+        return filename
+    stem = Path(filename).stem
+    suffix = Path(filename).suffix or ".md"
+    idx = 2
+    while True:
+        candidate = f"{stem}-{idx}{suffix}"
+        if candidate not in existing:
+            return candidate
+        idx += 1
 
 
 @router.post("", response_model=CollectionResponse)
@@ -172,3 +186,55 @@ async def upload_documents(collection_id: str, files: list[UploadFile] = File(..
     add_documents_to_collection(collection_id, added)
 
     return {"uploaded": len(added), "documents": added}
+
+
+@router.post("/{collection_id}/crawl", response_model=dict)
+def crawl_document_endpoint(collection_id: str, body: CollectionCrawlRequest):
+    """Crawl one web URL, save markdown into collection, and index to vector store."""
+    coll = get_collection(collection_id)
+    if not coll:
+        raise HTTPException(status_code=404, detail="Collection not found")
+
+    api_key = settings.DASHSCOPE_API_KEY or os.environ.get("DASHSCOPE_API_KEY", "")
+    if not api_key:
+        raise HTTPException(
+            status_code=503,
+            detail="DASHSCOPE_API_KEY not configured. Please set it in backend/.env",
+        )
+
+    try:
+        page = fetch_and_extract_markdown(str(body.url))
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
+    except Exception as e:
+        logger.exception("Failed to crawl url %s", body.url)
+        raise HTTPException(status_code=502, detail=f"Failed to fetch page: {e}") from e
+
+    existing_filenames = {
+        str(d.get("filename", "")).strip()
+        for d in (coll.get("documents") or [])
+        if d.get("filename")
+    }
+    filename = _dedupe_filename(existing_filenames, suggest_markdown_filename(page.title))
+
+    upload_dir = settings.UPLOADS_DIR / collection_id
+    upload_dir.mkdir(parents=True, exist_ok=True)
+
+    doc_id = str(uuid.uuid4())
+    save_path = upload_dir / f"{doc_id}.md"
+    save_path.write_text(page.markdown, encoding="utf-8")
+
+    try:
+        chunks = chunk_text(page.markdown, doc_id)
+        VectorStore(collection_id).add_chunks(chunks)
+    except Exception as e:
+        logger.exception("Failed to embed crawled page %s", body.url)
+        save_path.unlink(missing_ok=True)
+        raise HTTPException(
+            status_code=503,
+            detail=f"Embedding failed (check DASHSCOPE_API_KEY): {e}",
+        ) from e
+
+    doc_meta = {"id": doc_id, "filename": filename, "file_type": "md"}
+    add_documents_to_collection(collection_id, [doc_meta])
+    return {"document": doc_meta}

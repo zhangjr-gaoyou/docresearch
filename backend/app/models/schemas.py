@@ -1,5 +1,5 @@
 """Pydantic schemas for API request/response."""
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, HttpUrl
 from typing import Optional
 
 
@@ -19,6 +19,10 @@ class DocumentInfo(BaseModel):
     file_type: str
 
 
+class CollectionCrawlRequest(BaseModel):
+    url: HttpUrl
+
+
 # --- Search ---
 class SearchRequest(BaseModel):
     collection_id: str
@@ -35,6 +39,7 @@ class SearchResultItem(BaseModel):
 
 class SearchResponse(BaseModel):
     results: list[SearchResultItem]
+    llm_summary: Optional[str] = None
 
 
 class RerankRequest(BaseModel):
@@ -125,6 +130,97 @@ class ResearchJobResponse(BaseModel):
     logs: Optional[list[ResearchLogEntry]] = None  # 执行日志
     started_at: Optional[str] = None  # ISO 时间，列表与详情用
     title: Optional[str] = None  # 研究项目标题（列表展示；无则前端可用 topic）
+
+
+# --- Knowledge Extraction ---
+class KnowledgeJobCreateRequest(BaseModel):
+    collection_id: str
+
+
+class KnowledgeLogEntry(BaseModel):
+    time: str
+    message: str
+    level: str = "info"
+    document: Optional[str] = None
+    step: Optional[str] = None
+    detail: Optional[str] = None
+
+
+class KnowledgeJobResponse(BaseModel):
+    job_id: str
+    collection_id: str
+    status: str
+    progress: Optional[str] = None
+    logs: list[KnowledgeLogEntry] = []
+    started_at: Optional[str] = None
+    updated_at: Optional[str] = None
+
+
+class KnowledgeResultItem(BaseModel):
+    id: str
+    collection_id: str
+    document_id: str
+    document_name: str
+    result_type: str  # summary / structure / knowledge_point / graph_node / graph_edge
+    title: str
+    content: str
+    tags: list[str] = []
+    extra: Optional[dict] = None
+    created_at: str
+    updated_at: str
+
+
+class KnowledgeResultCreateRequest(BaseModel):
+    collection_id: str
+    document_id: str
+    document_name: str
+    result_type: str
+    title: str
+    content: str
+    tags: list[str] = []
+    extra: Optional[dict] = None
+
+
+class KnowledgeResultUpdateRequest(BaseModel):
+    title: Optional[str] = None
+    content: Optional[str] = None
+    tags: Optional[list[str]] = None
+    extra: Optional[dict] = None
+
+
+class KnowledgeGraphResponse(BaseModel):
+    nodes: list[dict]
+    edges: list[dict]
+
+
+class KnowledgeRetrieveRequest(BaseModel):
+    collection_id: str
+    query: str
+    top_k: int = Field(default=8, ge=1, le=30)
+
+
+class KnowledgeCitationItem(BaseModel):
+    layer: str
+    document_id: Optional[str] = None
+    document_name: Optional[str] = None
+    section_path: Optional[str] = None
+    score: float = 0.0
+    content: str
+    metadata: Optional[dict] = None
+
+
+class KnowledgeRetrieveLogItem(BaseModel):
+    time: str
+    message: str
+    level: str = "info"
+
+
+class KnowledgeRetrieveResponse(BaseModel):
+    answer: str
+    route: str
+    citations: list[KnowledgeCitationItem]
+    retrieved_chunks: list[dict]
+    logs: list[KnowledgeRetrieveLogItem] = []
 
 
 # --- Prompts ---

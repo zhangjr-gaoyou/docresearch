@@ -1,0 +1,54 @@
+[
+  {
+    "time": "22:22:01",
+    "message": "开始知识提取，文档数：1",
+    "level": "info"
+  },
+  {
+    "time": "22:22:01",
+    "message": "[1/1] 读取文档",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "read"
+  },
+  {
+    "time": "22:22:01",
+    "message": "[1/1] 执行知识提取",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "extract"
+  },
+  {
+    "time": "22:25:03",
+    "message": "[1/1] 业务领域识别：政府采购与工程建设招投标",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "domain"
+  },
+  {
+    "time": "22:25:04",
+    "message": "[1/1] 领域本体生成：实体类型20，谓语27",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "ontology"
+  },
+  {
+    "time": "22:25:04",
+    "message": "[1/1] 本体约束映射：关系映射57，类型降级3",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "graph_constraint"
+  },
+  {
+    "time": "22:25:05",
+    "message": "[1/1] 完成：summary/structure/knowledge_points/graph",
+    "level": "info",
+    "document": "f72a0e5a-7389-4565-9b26-a108515d9de9.pdf",
+    "step": "done"
+  },
+  {
+    "time": "22:25:05",
+    "message": "知识提取完成",
+    "level": "success"
+  }
+]
